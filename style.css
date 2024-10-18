@@ -63,6 +63,9 @@ body, html {
     object-fit: cover;
     top: 0;
     left: 0;
+    filter: hue-rotate(80deg) brightness(0.2) ; /* Adjusted for a purple tint */
+    /*background-color: rgba(255, 0, 128, 0.6);  Deep purple color with opacity */
+    /*mix-blend-mode: overlay;  Blend the purple tint with the video */
 }
 
 /* Content on top of video */
