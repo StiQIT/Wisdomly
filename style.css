@@ -1,28 +1,35 @@
+/* Ensure the body and html take full height */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
+    overflow: hidden;  /* Prevent scrollbars */
 }
 
-.content {
-    text-align: center;
-    color: white;
-    padding-top: 20%;
-}
-
-.animated-background {
+/* Style the video to be full screen */
+#background-video {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 100%;
-    background: url('images/background.jpg') repeat-x;
-    background-size: cover;
-    animation: scrollBackground 10s linear infinite;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;    /* Make sure the video fills the width */
+    min-height: 100%;   /* Make sure the video fills the height */
+    z-index: -1;        /* Put the video behind the content */
+    object-fit: cover;  /* Ensures the video covers the entire area without distortion */
 }
 
-@keyframes scrollBackground {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+/* Style for the content on top of the video */
+.content {
+    position: relative;
+    z-index: 1;         /* Make sure the content is above the video */
+    color: white;       /* Text color contrast against the video */
+    text-align: center; /* Center align the content */
+    padding-top: 20%;   /* Adjust to vertically center the content */
+}
+
+h1 {
+    font-size: 3em;
+}
+
+p {
+    font-size: 1.5em;
 }
