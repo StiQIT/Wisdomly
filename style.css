@@ -1,29 +1,77 @@
-/* Ensure the body and html take full height */
+/* Reset padding and margin for body and html */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;  /* Prevent scrollbars */
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
-/* Style the video to be full screen */
+/* Navbar styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /*background-color: rgba(0, 0, 0, 0.7);  Semi-transparent background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px; /* Adjust padding for better spacing */
+    z-index: 10; /* Ensure it stays above everything */
+    /*box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);  Optional: Add a subtle shadow to give it depth */
+}
+
+.navbar .logo h2 {
+    color: white;
+    margin: 0;
+    font-size: 1.8em; /* Adjust font size */
+}
+
+/* Navbar links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 60px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #f1c40f; /* Change color on hover */
+}
+
+/* Video background */
 #background-video {
     position: fixed;
     right: 0;
     bottom: 0;
-    min-width: 100%;    /* Make sure the video fills the width */
-    min-height: 100%;   /* Make sure the video fills the height */
-    z-index: -1;        /* Put the video behind the content */
-    object-fit: cover;  /* Ensures the video covers the entire area without distortion */
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    top: 0;
+    left: 0;
 }
 
-/* Style for the content on top of the video */
+/* Content on top of video */
 .content {
     position: relative;
-    z-index: 1;         /* Make sure the content is above the video */
-    color: white;       /* Text color contrast against the video */
-    text-align: center; /* Center align the content */
-    padding-top: 20%;   /* Adjust to vertically center the content */
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding-top: 20%;
 }
 
 h1 {
@@ -33,39 +81,8 @@ h1 {
 p {
     font-size: 1.5em;
 }
-/* Navbar styling */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Transparent black */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    z-index: 10; /* Ensures the navbar stays above the video */
-}
-.navbar .logo h2 {
-    color: white;
-    margin: 0;
-}
 
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links li a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
-}
-
-.nav-links li a:hover {
-    color: #f1c40f; /* Change color on hover */
+/* Ensure that the rest of the page content adjusts properly */
+* {
+    box-sizing: border-box;
 }
