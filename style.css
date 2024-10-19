@@ -14,19 +14,17 @@ body, html {
     top: 0;
     left: 0;
     width: 100%;
-    /*background-color: rgba(0, 0, 0, 0.7);  Semi-transparent background */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 50px; /* Adjust padding for better spacing */
-    z-index: 10; /* Ensure it stays above everything */
-    /*box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);  Optional: Add a subtle shadow to give it depth */
+    z-index: 10;
 }
 
 .navbar .logo h2 {
     color: white;
     margin: 0;
-    font-size: 1.8em; /* Adjust font size */
+    font-size: 1.8em;
 }
 
 /* Navbar links */
@@ -63,32 +61,9 @@ body, html {
     object-fit: cover;
     top: 0;
     left: 0;
-    filter: hue-rotate(80deg) brightness(0.2) ; /* Adjusted for a purple tint */
-    /*background-color: rgba(255, 0, 128, 0.6);  Deep purple color with opacity */
-    /*mix-blend-mode: overlay;  Blend the purple tint with the video */
+    filter: hue-rotate(80deg) brightness(0.2);
 }
 
-/* Content on top of video */
-.content {
-    position: relative;
-    z-index: 1;
-    color: white;
-    text-align: center;
-    padding-top: 20%;
-}
-
-h1 {
-    font-size: 3em;
-}
-
-p {
-    font-size: 1.5em;
-}
-
-/* Ensure that the rest of the page content adjusts properly */
-* {
-    box-sizing: border-box;
-}
 /* Container for the pillars */
 .container {
     display: flex;
@@ -102,49 +77,22 @@ p {
     padding-top: 120px; /* Add padding-top to push the content below the navbar */
 }
 
-/* Hover effect to zoom in the pillar */
-.pillar:hover {
-    transform: scale(1.05); /* Only zoom in without changing Y position on hover */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover for elevated look */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 /* Base styling for the pillars */
 .pillar {
-    width: 32%;                     /* Each pillar takes up 30% of the container width */
+    width: 32%;                     /* Each pillar takes up 32% of the container width */
     padding: 10px;
-    background-color: #7775771a;
+    background-color: rgba(119, 117, 119, 0.1);
     color: white;
     border-radius: 10px;
-    transform: translateY(100px);   /* Start the pillars off-screen (below their final position) */
-    opacity: 0;                     /* Hidden by default */
+    opacity: 0;                     /* Initially hidden */
+    transform: translateY(100px);   /* Initially off-screen */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for elevation effect */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
 }
 
-/* Animate each pillar individually */
-.pillar-1 {
-    animation: emerge 1.5s ease-out forwards 0.5s; /* First pillar starts after 0.5 seconds */
-}
-
-.pillar-2 {
-    animation: emerge 1.5s ease-out forwards 1.5s; /* Second pillar starts after 1.5 seconds */
-}
-
-.pillar-3 {
-    animation: emerge 1.5s ease-out forwards 2.5s; /* Third pillar starts after 2.5 seconds */
-}
-
-/* Keyframes for the emerge animation */
-
-/* Keyframes for the emerge animation */
-@keyframes emerge {
-    0% {
-        transform: translateY(100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+/* Hover effect to zoom in the pillar */
+.pillar:hover {
+    transform: scale(1.05); /* Zoom in on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
 }
