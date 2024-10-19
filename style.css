@@ -102,17 +102,23 @@ p {
     padding-top: 120px; /* Add padding-top to push the content below the navbar */
 }
 
+/* Hover effect to zoom in the pillar */
+.pillar:hover {
+    transform: scale(1.05); /* Only zoom in without changing Y position on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover for elevated look */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 /* Base styling for the pillars */
 .pillar {
     width: 32%;                     /* Each pillar takes up 30% of the container width */
     padding: 10px;
-    background-color: #25022059;
+    background-color: #7775771a;
     color: white;
     border-radius: 10px;
     transform: translateY(100px);   /* Start the pillars off-screen (below their final position) */
     opacity: 0;                     /* Hidden by default */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for elevation effect */
-    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
 }
 
@@ -130,22 +136,15 @@ p {
 }
 
 /* Keyframes for the emerge animation */
+
+/* Keyframes for the emerge animation */
 @keyframes emerge {
     0% {
-        transform: translateY(100px);  /* Start below the screen */
+        transform: translateY(100px);
         opacity: 0;
     }
     100% {
-        transform: translateY(0);      /* Move to final position */
-        opacity: 1;                    /* Fully visible */
+        transform: translateY(0);
+        opacity: 1;
     }
-}
-
-/* Offset the vertical position of the pillars slightly */
-.pillar-2 {
-    transform: translateY(30px);  /* Start a bit lower */
-}
-
-.pillar-3 {
-    transform: translateY(50px);  /* Start even lower */
 }
