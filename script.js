@@ -37,10 +37,15 @@ fetch('content.json')
       const headings = data.headings;
       const subHeadings = data.subHeadings;
       const descriptions = data.descriptions;
-
+      const navbarHeading = data.navbarHeading;
+      
       // Check if elements exist before updating
       console.log('Pillar 1 Heading:', document.getElementById('heading1'));
 
+      if (document.getElementById('navbar-heading')) {
+        document.getElementById('navbar-heading').innerText = navbarHeading;
+    }      
+      
       // Populate the first pillar content
       if (document.getElementById('heading1')) {
           document.getElementById('heading1').innerText = headings[0];
