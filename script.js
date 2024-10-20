@@ -28,3 +28,39 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+fetch('content.json')
+  .then(response => response.json())
+  .then(data => {
+      console.log('JSON Data:', data); // Log the JSON data to see if it's fetched properly
+
+      const pillars = data.pillars;
+      const headings = data.headings;
+      const subHeadings = data.subHeadings;
+      const descriptions = data.descriptions;
+
+      // Check if elements exist before updating
+      console.log('Pillar 1 Heading:', document.getElementById('heading1'));
+
+      // Populate the first pillar content
+      if (document.getElementById('heading1')) {
+          document.getElementById('heading1').innerText = headings[0];
+          document.getElementById('subHeading1').innerText = subHeadings[0];
+          document.getElementById('description1').innerText = descriptions[0];
+      }
+
+      // Populate the second pillar content
+      if (document.getElementById('heading2')) {
+          document.getElementById('heading2').innerText = headings[1];
+          document.getElementById('subHeading2').innerText = subHeadings[1];
+          document.getElementById('description2').innerText = descriptions[1];
+      }
+
+      // Populate the third pillar content
+      if (document.getElementById('heading3')) {
+          document.getElementById('heading3').innerText = headings[2];
+          document.getElementById('subHeading3').innerText = subHeadings[2];
+          document.getElementById('description3').innerText = descriptions[2];
+      }
+  })
+  .catch(error => console.error('Error loading JSON file:', error));
+
