@@ -1,3 +1,5 @@
+
+
 /* Reset padding and margin for body and html */
 body, html {
     margin: 0;
@@ -17,14 +19,16 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px; /* Adjust padding for better spacing */
+    padding: 15px 30px; /* Adjust padding for better spacing */
     z-index: 10;
 }
 
 .navbar .logo h2 {
     color: white;
-    margin: 0;
+    margin: 5;
+    padding: 5px;
     font-size: 1.8em;
+    
 }
 
 /* Navbar links */
@@ -83,6 +87,7 @@ body, html {
     padding: 10px;
     background-color: rgba(119, 117, 119, 0.1);
     color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional light border */
     border-radius: 10px;
     opacity: 0;                     /* Initially hidden */
     transform: translateY(100px);   /* Initially off-screen */
@@ -94,5 +99,5 @@ body, html {
 /* Hover effect to zoom in the pillar */
 .pillar:hover {
     transform: scale(1.05); /* Zoom in on hover */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+    box-shadow: 0 10px 20px rgba(202, 4, 4, 0.8); /* Enhance shadow on hover */
 }

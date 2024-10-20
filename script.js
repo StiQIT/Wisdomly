@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     pillars.forEach((pillar, index) => {
         setTimeout(() => {
             pillar.style.opacity = 1; // Make pillar visible
-            pillar.style.transition = 'transform 1.2s ease, opacity 1.2s ease'; // Slow down transition
+            pillar.style.transition = 'transform 0.5s ease, opacity 0.5s ease'; // Slow down transition
             pillar.style.transform = 'translateY(0)'; // Move pillar into position
         }, index * 1500); // 1.5 second delay between each pillar
     });
