@@ -33,18 +33,24 @@ fetch('content.json')
   .then(data => {
       console.log('JSON Data:', data); // Log the JSON data to see if it's fetched properly
 
+      
       const pillars = data.pillars;
       const headings = data.headings;
       const subHeadings = data.subHeadings;
       const descriptions = data.descriptions;
       const navbarHeading = data.navbarHeading;
-      
+      const logoUrl = data.logoUrl;
+
       // Check if elements exist before updating
       console.log('Pillar 1 Heading:', document.getElementById('heading1'));
-
+      console.log('Logo URL:', logoUrl); // Log the logo URL to make sure it's being fetched
+      
+      if (document.getElementById('logo')) {
+        document.getElementById('logo').src = logoUrl;
+      }
       if (document.getElementById('navbar-heading')) {
         document.getElementById('navbar-heading').innerText = navbarHeading;
-    }      
+      }      
       
       // Populate the first pillar content
       if (document.getElementById('heading1')) {
