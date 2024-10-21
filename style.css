@@ -9,7 +9,26 @@ body, html {
     box-sizing: border-box;
     overflow-x: hidden; /* Prevent horizontal overflow */
 }
+/* Styles for the main heading and quote */
+.heading-quote-container {
+    text-align: center;
+    color: white;
+    margin-top: 150px; /* Space above the heading and quote */
+    margin-bottom: 50px; /* Space below the heading and quote */
+    padding: 0 20px; /* Optional padding for smaller screens */
+}
+.heading-quote-container h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
 
+.heading-quote-container blockquote {
+    font-size: 1.5em;
+    font-style: italic;
+    margin: 0;
+    color: #f1c40f; /* Highlight the quote */
+}
 /* Navbar styling */
 .navbar {
     position: relative; /* Navbar scrolls with the content */
