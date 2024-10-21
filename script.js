@@ -94,3 +94,40 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .catch(error => console.error('Error loading JSON file:', error));
 });
+// Scroll to Top Button
+document.addEventListener("DOMContentLoaded", function() {
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    // Ensure the button exists
+    if (!scrollToTopBtn) {
+        console.error("Scroll to Top button NOT found in DOM");
+        return;
+    }
+
+    // Function to toggle the visibility of the button based on scroll position
+    function toggleScrollToTopBtn() {
+        if (window.scrollY > 100) { // Show button after scrolling 100px down
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none"; // Hide button when at the top
+        }
+    }
+
+    // Initial check when the page loads
+    toggleScrollToTopBtn();
+
+    // Check scroll position when the user scrolls
+    window.addEventListener("scroll", function() {
+        toggleScrollToTopBtn();
+    });
+
+    // Scroll to the top of the page when the button is clicked
+    scrollToTopBtn.addEventListener("click", function() {
+        console.log("Button clicked! Scrolling to top.");
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
+
