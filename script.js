@@ -9,12 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Animate each pillar with a longer delay and slower transition
     pillars.forEach((pillar, index) => {
         setTimeout(() => {
-            pillar.style.opacity = 1; // Make pillar visible
+            pillar.style.opacity = 1;
             pillar.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
-            pillar.style.transform = 'translateY(0)'; // Move pillar into position
-        }, index * 1500); // 1.5 second delay between each pillar
+            pillar.style.transform = 'translateY(0)';
+        }, index * 1500 + 2000); // Adding a 2 second delay to allow the quote to type first
     });
-
     // Add hover effect using JavaScript
     pillars.forEach(pillar => {
         pillar.addEventListener('mouseenter', () => {
@@ -69,12 +68,12 @@ document.addEventListener('DOMContentLoaded', function () {
           const quoteElement = document.getElementById('main-quote');
 
           if (headingElement && mainHeading) {
-              typeEffect(headingElement, mainHeading, 100); // Adjust speed of typing here (100ms)
+              typeEffect(headingElement, mainHeading, 30); // Adjust speed of typing here (100ms)
           }
 
           if (quoteElement && mainQuote) {
               setTimeout(() => {
-                  typeEffect(quoteElement, mainQuote, 80); // Add delay for the quote typing
+                  typeEffect(quoteElement, mainQuote, 30); // Add delay for the quote typing
               }, 2000); // Delay before starting to type the quote (2 seconds)
           }
 
