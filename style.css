@@ -12,7 +12,7 @@ body, html {
 
 /* Navbar styling */
 .navbar {
-    position: fixed;
+    position: relative; /* Navbar scrolls with the content */
     top: 0;
     left: 0;
     width: 100%;
@@ -20,21 +20,15 @@ body, html {
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px; /* Adjust padding for better spacing */
-    z-index: 10;
+    z-index: 1000;
+    background-color: transparent; /* No background for navbar */
+    box-shadow: none; /* Remove shadow if needed */
+    height: 80px; /* Set a fixed height for the navbar */
 }
 
 .logo {
     display: flex;
     align-items: center; /* Align the logo and heading vertically */
-}
-
-.navbar .logo h2 {
-    color: white;  /* Ensure the text is visible against your background */
-    margin: 5px;
-    padding: 0px;
-
-    font-size: 1.8em;
-    display: inline-block; /* Ensure it doesn't collapse */
 }
 /* Style the logo image */
 .logo img {
@@ -44,30 +38,103 @@ body, html {
     object-fit: cover; /* Ensure the image maintains its aspect ratio */
     margin-right: 10px; /* Add space between the logo and heading */
 }
+.navbar .logo h2 {
+    color: white;  /* Ensure the text is visible against your background */
+    margin: 5px;
+    padding: 0px;
+
+    font-size: 1.8em;
+    display: inline-block; /* Ensure it doesn't collapse */
+}
+
 
 /* Navbar links */
 .nav-links {
     list-style: none;
     display: flex;
     margin: 0;
+    padding: 0;
 }
 
 .nav-links li {
     margin: 0 60px;
+    position: relative;
 }
 
 .nav-links li a {
     text-decoration: none;
     color: white;
     font-size: 1.2em;
-    padding: 5px;
+    padding: 5px 20px;
     transition: color 0.3s ease;
+    position: relative;
+    display: inline-block;
 }
 
 .nav-links li a:hover {
     color: #f1c40f; /* Change color on hover */
 }
+/* Dropdown menu */
+.nav-links .dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: transparent; /* No background for the dropdown */
+    padding: 0;
+    border-radius: 10px;
+    z-index: 100;
+    width: 180px; /* Set a fixed width for the dropdown */
+    box-shadow: none; /* Remove shadow if needed */
+}
 
+.nav-links .dropdown-menu li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block; /* Ensure dropdown items are block-level */
+    width: 100%; /* Full width for each item */
+}
+
+/* Link styles in the dropdown */
+.nav-links .dropdown-menu li a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block; /* Ensure links take up full width */
+    width: 100%; /* Ensure link takes full width */
+    box-sizing: border-box; /* Include padding in the width */
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Create a pseudo-element for the underline effect */
+.nav-links .dropdown-menu li a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #f1c40f; /* Underline color */
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for dropdown links: Left-to-right underline */
+.nav-links .dropdown-menu li a:hover::before {
+    visibility: visible;
+    width: 100%; /* Underline expands to the full width */
+}
+
+.nav-links .dropdown-menu li a:hover {
+    color: #f1c40f; /* Change text color on hover */
+}
+
+/* Show the dropdown when hovering over the parent item */
+.nav-links .dropdown:hover .dropdown-menu {
+    display: block; /* Show the dropdown */
+}
 /* Video background */
 #background-video {
     position: fixed;
