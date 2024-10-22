@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
             pillar.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.2)'; // Reset shadow
         });
     });
-<<<<<<< Updated upstream
 
     // Function to create typing effect
     function typeEffect(element, text, speed) {
@@ -82,56 +81,16 @@ document.addEventListener('DOMContentLoaded', function () {
           document.getElementById('heading1').innerText = headings[0];
           document.getElementById('subHeading1').innerText = subHeadings[0];
           document.getElementById('description1').innerText = descriptions[0];
-=======
-});
-
-fetch('content.json')
-  .then(response => response.json())
-  .then(data => {
-      console.log('JSON Data:', data); // Log the JSON data to see if it's fetched properly
-
-      const headings = data.headings;
-      const subHeadings = data.subHeadings;
-      const descriptions = data.descriptions;
-      const navbarHeading = data.navbarHeading;
-      const logoUrl = data.logoUrl;
-
-      // Check if elements exist before updating
-      console.log('Logo URL:', logoUrl); // Log the logo URL to ensure it's correct
-      console.log('Navbar Heading:', navbarHeading); // Log the navbar heading to verify data
-
-      if (document.getElementById('logo')) {
-          document.getElementById('logo').src = logoUrl;
-      }
-      if (document.getElementById('navbar-heading')) {
-          document.getElementById('navbar-heading').innerText = navbarHeading;
-      }      
-      
-      // Populate the first pillar content
-      if (document.getElementById('heading1')) {
-        document.getElementById('heading1').innerText = 'Static Heading 1';
-        document.getElementById('subHeading1').innerText = 'Static Subheading 1';
-        document.getElementById('description1').innerText = 'Static Description for Pillar 1';
-        
-          console.log('Pillar 1 loaded');
-      }
->>>>>>> Stashed changes
 
           // Populate the second pillar content
           document.getElementById('heading2').innerText = headings[1];
           document.getElementById('subHeading2').innerText = subHeadings[1];
           document.getElementById('description2').innerText = descriptions[1];
-<<<<<<< Updated upstream
-=======
-          console.log('Pillar 2 loaded');
-      }
->>>>>>> Stashed changes
 
           // Populate the third pillar content
           document.getElementById('heading3').innerText = headings[2];
           document.getElementById('subHeading3').innerText = subHeadings[2];
           document.getElementById('description3').innerText = descriptions[2];
-<<<<<<< Updated upstream
       })
       .catch(error => console.error('Error loading JSON file:', error));
 });
@@ -172,11 +131,3 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-=======
-          console.log('Pillar 3 loaded');
-      }
-  })
-  .catch(error => {
-      console.error('Error loading JSON file:', error);
-  });
->>>>>>> Stashed changes

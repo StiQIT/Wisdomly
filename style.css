@@ -1,3 +1,5 @@
+
+
 /* Reset padding and margin for body and html */
 body, html {
     margin: 0;
@@ -45,31 +47,9 @@ body, html {
     height: 80px; /* Set a fixed height for the navbar */
 }
 
-<<<<<<< Updated upstream
 .logo {
     display: flex;
     align-items: center; /* Align the logo and heading vertically */
-=======
-/* Ensure the logo and heading are aligned properly */
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
-}
-
-.logo h2 {
-    color: white;
-    margin: 0;
-    padding: 0 10px;
-    font-size: 1.8em;
->>>>>>> Stashed changes
 }
 /* Style the logo image */
 .logo img {
@@ -113,70 +93,7 @@ body, html {
 }
 
 .nav-links li a:hover {
-    color: #f1c40f;
-}
-
-/* Dropdown menu */
-.nav-links .dropdown-menu {
-    display: none; /* Hidden by default */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: transparent; /* No background for the dropdown */
-    padding: 0;
-    border-radius: 10px;
-    z-index: 100;
-    width: 180px; /* Set a fixed width for the dropdown */
-    box-shadow: none; /* Remove shadow if needed */
-}
-
-/* Dropdown menu items */
-.nav-links .dropdown-menu li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: block; /* Ensure dropdown items are block-level */
-    width: 100%; /* Full width for each item */
-}
-
-/* Link styles in the dropdown */
-.nav-links .dropdown-menu li a {
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    display: block; /* Ensure links take up full width */
-    width: 100%; /* Ensure link takes full width */
-    box-sizing: border-box; /* Include padding in the width */
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-/* Create a pseudo-element for the underline effect */
-.nav-links .dropdown-menu li a::before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #f1c40f; /* Underline color */
-    visibility: hidden;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Hover effect for dropdown links: Left-to-right underline */
-.nav-links .dropdown-menu li a:hover::before {
-    visibility: visible;
-    width: 100%; /* Underline expands to the full width */
-}
-
-.nav-links .dropdown-menu li a:hover {
-    color: #f1c40f; /* Change text color on hover */
-}
-
-/* Show the dropdown when hovering over the parent item */
-.nav-links .dropdown:hover .dropdown-menu {
-    display: block; /* Show the dropdown */
+    color: #f1c40f; /* Change color on hover */
 }
 /* Dropdown menu */
 .nav-links .dropdown-menu {
@@ -256,35 +173,35 @@ body, html {
 /* Container for the pillars */
 .container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    height: 100vh;
+    justify-content: space-between; /* Creates space between the pillars */
+    align-items: flex-start;        /* Aligns pillars at different vertical positions */
+    height: 100vh;                  /* Full viewport height */
     padding: 20px;
     position: relative;
-    perspective: 800px;
+    perspective: 800px; /* Add a perspective for a subtle 3D effect */
     z-index: 1;
-    margin-top: 0;
+    padding-top: 120px; /* Add padding-top to push the content below the navbar */
 }
 
 /* Base styling for the pillars */
 .pillar {
-    width: 32%;
+    width: 32%;                     /* Each pillar takes up 32% of the container width */
     padding: 10px;
     background-color: rgba(119, 117, 119, 0.1);
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional light border */
     border-radius: 10px;
-    opacity: 0;
-    transform: translateY(100px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0;                     /* Initially hidden */
+    transform: translateY(100px);   /* Initially off-screen */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for elevation effect */
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
 }
 
 /* Hover effect to zoom in the pillar */
 .pillar:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(202, 4, 4, 0.8);
+    transform: scale(1.05); /* Zoom in on hover */
+    box-shadow: 0 10px 20px rgba(202, 4, 4, 0.8); /* Enhance shadow on hover */
 }
 
 /* Scroll to Top Button Styling */
