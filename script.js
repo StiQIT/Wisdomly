@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             pillar.style.opacity = 1;
             pillar.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
             pillar.style.transform = 'translateY(0)';
-        }, index * 1500 + 2000); // Adding a 2 second delay to allow the quote to type first
+        }, index * 1500 + 1000); // Adding a 2 second delay to allow the quote to type first
     });
     // Add hover effect using JavaScript
     pillars.forEach(pillar => {

@@ -167,7 +167,7 @@ body, html {
     object-fit: cover;
     top: 0;
     left: 0;
-    filter: hue-rotate(80deg) brightness(0.2);
+    filter: hue-rotate(80deg) brightness(0.5);
 }
 
 /* Container for the pillars */
