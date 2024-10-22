@@ -9,6 +9,14 @@ body, html {
     box-sizing: border-box;
     overflow-x: hidden; /* Prevent horizontal overflow */
 }
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the page takes the full height of the viewport */
+}
+.content-wrapper {
+    flex: 1; /* This makes sure the content takes up all the remaining space */
+}
 /* Styles for the main heading and quote */
 .heading-quote-container {
     text-align: center;
@@ -232,3 +240,70 @@ body, html {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
 }
 
+/* Footer Styles */
+footer {
+    background-color: #333; /* Dark background */
+    color: white;           /* White text color */
+    padding: 40px 20px;     /* Padding for space around content */
+    text-align: center;     /* Center text by default */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Create space between columns */
+    flex-wrap: wrap;                /* Wrap columns on smaller screens */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 10px 20px;
+    min-width: 250px;
+}
+
+.footer-column h3 {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    transition: filter 0.3s;
+}
+
+.social-icons img:hover {
+    filter: brightness(0.8);
+}
+
+/* Responsive Footer: Stack columns on smaller screens */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .footer-column {
+        margin-bottom: 30px;
+    }
+}

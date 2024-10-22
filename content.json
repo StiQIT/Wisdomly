@@ -1,6 +1,24 @@
 {
     "logoUrl": "https://stiq.gr/wp-content/uploads/2024/10/DALL·E-2024-10-20-17.11.01-A-minimalistic-futuristic-businessman-design-in-a-cyan-color-palette.-The-businessman-should-wear-sleek-modern-attire-with-a-technological-edge.-Hol.webp",
-
+    "footer": {
+        "aboutUs": "We are a forward-thinking company driving AI innovation. Our mission is to empower businesses through technology and sustainable growth.",
+        "services": [
+            {"name": "AI Consulting", "url": "https://example.com/ai-consulting"},
+            {"name": "Tech Solutions", "url": "https://example.com/tech-solutions"},
+            {"name": "Sustainability Strategies", "url": "https://example.com/sustainability"}
+          ],
+        "contact": {
+            "email": "info@wisdomly.ai",
+            "phone": "+123 456 7890",
+            "address": "123 AI Street, Innovation City"
+        },
+        "socialLinks": {
+            "facebook": "https://facebook.com/yourpage",
+            "twitter": "https://twitter.com/yourpage",
+            "linkedin": "https://linkedin.com/in/yourprofile",
+            "instagram": "https://instagram.com/yourpage"
+        }
+    },
     "navbarHeading": "W̲̲i̲̲s̲̲d̲̲o̲̲m̲̲l̲̲y̲",
     "mainHeading": "Shaping the Future with AI",
     "mainQuote": "“Technology is best when it brings people together.” – Matt Mullenweg",
@@ -25,4 +43,5 @@
         "Explore cutting-edge technology that accelerates your business success.",
         "We promote sustainable growth through innovative, long-term solutions."
     ]
+    
 }

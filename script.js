@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
             pillar.style.transform = 'translateY(0)';
         }, index * 1500 + 1000); // Adding a 2 second delay to allow the quote to type first
     });
+
     // Add hover effect using JavaScript
     pillars.forEach(pillar => {
         pillar.addEventListener('mouseenter', () => {
@@ -40,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         typeLetter(); // Start typing
     }
-    
 
     fetch('content.json')
       .then(response => response.json())
@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const headings = data.headings;
           const subHeadings = data.subHeadings;
           const descriptions = data.descriptions;
+          const footerData = data.footer;
 
           // Set the logo and navbar heading
           if (document.getElementById('logo')) {
@@ -91,9 +92,32 @@ document.addEventListener('DOMContentLoaded', function () {
           document.getElementById('heading3').innerText = headings[2];
           document.getElementById('subHeading3').innerText = subHeadings[2];
           document.getElementById('description3').innerText = descriptions[2];
+
+          // Footer: About Us
+          document.getElementById('about-us').innerText = footerData.aboutUs;
+
+          // Footer: Services List
+          const servicesList = document.getElementById('services-list');
+          footerData.services.forEach(service => {
+              const li = document.createElement('li');
+              li.innerText = service;
+              servicesList.appendChild(li);
+          });
+
+          // Footer: Contact Info
+          document.getElementById('contact-email').innerText = `Email: ${footerData.contact.email}`;
+          document.getElementById('contact-phone').innerText = `Phone: ${footerData.contact.phone}`;
+          document.getElementById('contact-address').innerText = `Address: ${footerData.contact.address}`;
+
+          // Footer: Social Links
+          document.getElementById('facebook-link').href = footerData.socialLinks.facebook;
+          document.getElementById('twitter-link').href = footerData.socialLinks.twitter;
+          document.getElementById('linkedin-link').href = footerData.socialLinks.linkedin;
+          document.getElementById('instagram-link').href = footerData.socialLinks.instagram;
       })
       .catch(error => console.error('Error loading JSON file:', error));
 });
+
 // Scroll to Top Button
 document.addEventListener("DOMContentLoaded", function() {
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
@@ -130,4 +154,3 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-
