@@ -55,3 +55,80 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .catch(error => console.error('Error loading JSON file:', error));
 });
+// Scroll to Top Button
+document.addEventListener("DOMContentLoaded", function() {
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    // Ensure the button exists
+    if (!scrollToTopBtn) {
+        console.error("Scroll to Top button NOT found in DOM");
+        return;
+    }
+
+    // Function to toggle the visibility of the button based on scroll position
+    function toggleScrollToTopBtn() {
+        if (window.scrollY > 100) { // Show button after scrolling 100px down
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none"; // Hide button when at the top
+        }
+    }
+
+    // Initial check when the page loads
+    toggleScrollToTopBtn();
+
+    // Check scroll position when the user scrolls
+    window.addEventListener("scroll", function() {
+        toggleScrollToTopBtn();
+    });
+
+    // Scroll to the top of the page when the button is clicked
+    scrollToTopBtn.addEventListener("click", function() {
+        console.log("Button clicked! Scrolling to top.");
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
+document.addEventListener('DOMContentLoaded', function () {
+    // Existing code here...
+
+    const navbar = document.querySelector('.navbar');
+    const navbarToggleButton = document.getElementById('navbarToggleButton');
+    let lastScrollY = window.scrollY;
+    let navbarHidden = false;
+
+    // Function to show the navbar
+    function showNavbar() {
+        navbar.style.transform = 'translateY(0)';
+        navbarToggleButton.style.display = 'none'; // Hide button when navbar is shown
+        navbarHidden = false;
+    }
+
+    // Function to hide the navbar
+    function hideNavbar() {
+        navbar.style.transform = 'translateY(-100%)';
+        navbarToggleButton.style.display = 'block'; // Show button when navbar is hidden
+        navbarHidden = true;
+    }
+
+    // Scroll event to detect scroll direction
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > lastScrollY && !navbarHidden) {
+            // Scrolling down
+            hideNavbar();
+        } else if (window.scrollY < lastScrollY && navbarHidden) {
+            // Scrolling up
+            showNavbar();
+        }
+        lastScrollY = window.scrollY;
+    });
+
+    // Click event for the toggle button to show the navbar
+    navbarToggleButton.addEventListener('click', function () {
+        showNavbar();
+    });
+
+    // Continue with any other existing code...
+});

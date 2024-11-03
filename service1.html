@@ -43,6 +43,9 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav> 
+        <button id="navbarToggleButton" class="navbar-toggle-button">
+            <img src="https://stiq.gr/wp-content/uploads/2024/11/DALL·E-2024-11-01-12.57.25-A-minimalist-menu-icon-with-exactly-three-white-horizontal-lines-evenly-spaced-and-centered-within-a-clean-white-circular-border.-The-background-is-a-modified-1.png" alt="Toggle Navbar" />
+        </button>
         <!-- Main content of the page -->
         <div class="content-wrapper">
             <!-- Video Background -->
@@ -70,24 +73,32 @@
                 </tr>
             </table>
         </div>
-
+        <!-- Scroll to Top Button -->
+        <button id="scrollToTopBtn">↑</button>
         <!-- Footer -->
         <footer>
             <div class="footer-container">
+                <!-- First Column: About Us -->
                 <div class="footer-column">
                     <h3>About Us</h3>
                     <p id="about-us"></p>
                 </div>
+
+                <!-- Second Column: Services -->
                 <div class="footer-column">
                     <h3>Services</h3>
                     <ul id="services-list"></ul>
                 </div>
+
+                <!-- Third Column: Contact and Social Links -->
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <!-- Replace with actual email address and phone number -->
                     <p><a id="contact-email" href="mailto:info@example.com">Email</a></p>
                     <p><a id="contact-phone" href="tel:+1234567890">Phone</a></p>
                     <p id="contact-address"></p> 
+
+                    <!-- Social Media Links -->
                     <div class="social-icons">
                         <a href="#" id="facebook-link" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a>
                         <a href="#" id="twitter-link" target="_blank"><img src="twitter-icon.png" alt="Twitter"></a>
@@ -97,10 +108,8 @@
                 </div>
             </div>
         </footer>
-    </div> <!-- End of page-container -->
 
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTopBtn">↑</button>
+
 
     <!-- Link to the service-specific JavaScript -->
     <script src="script-service1.js"></script>
