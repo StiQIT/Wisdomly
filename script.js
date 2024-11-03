@@ -155,7 +155,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 document.addEventListener('DOMContentLoaded', function () {
-    // Existing code here...
+    // Check if we are on desktop
+    function isDesktop() {
+        return window.innerWidth >= 1024; // You can adjust the breakpoint as needed
+    }
 
     const navbar = document.querySelector('.navbar');
     const navbarToggleButton = document.getElementById('navbarToggleButton');
@@ -178,19 +181,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Scroll event to detect scroll direction
     window.addEventListener('scroll', function () {
-        if (window.scrollY > lastScrollY && !navbarHidden) {
-            // Scrolling down
-            hideNavbar();
-        } else if (window.scrollY < lastScrollY && navbarHidden) {
-            // Scrolling up
-            showNavbar();
+        if (isDesktop()) {
+            if (window.scrollY > lastScrollY && !navbarHidden) {
+                // Scrolling down
+                hideNavbar();
+            } else if (window.scrollY < lastScrollY && navbarHidden) {
+                // Scrolling up
+                showNavbar();
+            }
+            lastScrollY = window.scrollY;
         }
-        lastScrollY = window.scrollY;
     });
 
     // Click event for the toggle button to show the navbar
     navbarToggleButton.addEventListener('click', function () {
-        showNavbar();
+        if (isDesktop()) {
+            showNavbar();
+        }
+    });
+
+    // Optional: Add a resize event to handle changes in window size
+    window.addEventListener('resize', function () {
+        if (!isDesktop()) {
+            // Ensure the navbar is shown when resizing to a non-desktop size
+            showNavbar();
+        }
     });
 
     // Continue with any other existing code...
