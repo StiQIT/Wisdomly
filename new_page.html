@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisdomly.ai | Service 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="page-container">
+        
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="logo">
+                <img id="logo" src="" alt="Logo">
+                <h2 id="navbar-heading">Wisdomly</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+        
+                <!-- Services Dropdown -->
+                <li class="dropdown">
+                    <a href="#services" class="dropdown-toggle">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="service1.html">Service 1</a></li>
+                        <li><a href="#service2">Service 2</a></li>
+                        <li><a href="#service3">Service 3</a></li>
+                    </ul>
+                </li>
+        
+                <!-- Partners Dropdown -->
+                <li class="dropdown">
+                    <a href="#partners" class="dropdown-toggle">Partners</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#partner1">Partner 1</a></li>
+                        <li><a href="#partner2">Partner 2</a></li>
+                        <li><a href="#partner3">Partner 3</a></li>
+                    </ul>
+                </li>
+        
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav> 
+        <!-- Main content of the page -->
+        <div class="content-wrapper">
+            <!-- Video Background -->
+            <video autoplay muted loop id="background-video">
+                <source src="https://stiq.gr/wp-content/uploads/2024/10/forthandback.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <!-- Service-specific content can go here -->
+            <h1 id="service-heading">Service 1</h1>
+            <p id="service-description">Details about Service 1.</p>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p id="about-us"></p>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul id="services-list"></ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <!-- Replace with actual email address and phone number -->
+                    <p><a id="contact-email" href="mailto:info@example.com">Email</a></p>
+                    <p><a id="contact-phone" href="tel:+1234567890">Phone</a></p>
+                    <p id="contact-address"></p> 
+                    <div class="social-icons">
+                        <a href="#" id="facebook-link" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a>
+                        <a href="#" id="twitter-link" target="_blank"><img src="twitter-icon.png" alt="Twitter"></a>
+                        <a href="#" id="linkedin-link" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                        <a href="#" id="instagram-link" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div> <!-- End of page-container -->
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn">↑</button>
+
+    <!-- Link to the service-specific JavaScript -->
+    <script src="script-service1.js"></script>
+</body>
+</html>

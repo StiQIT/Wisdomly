@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisdomly.ai | Home Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="page-container"> <!-- New container to manage flexbox layout -->
+        
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="logo">
+                <img id="logo" src="" alt="Logo">
+                <h2 id="navbar-heading">Wisdomly</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+       
+                <!-- Services Dropdown -->
+                <li class="dropdown">
+                    <a href="#services" class="dropdown-toggle">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="service1.html">Service 1</a></li>
+                        <li><a href="#service2">Service 2</a></li>
+                        <li><a href="#service3">Service 3</a></li>
+                    </ul>
+                </li>
+        
+                <!-- Partners Dropdown -->
+                <li class="dropdown">
+                    <a href="#partners" class="dropdown-toggle">Partners</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#partner1">Partner 1</a></li>
+                        <li><a href="#partner2">Partner 2</a></li>
+                        <li><a href="#partner3">Partner 3</a></li>
+                    </ul>
+                </li>
+        
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>  
+        <button id="navbarToggleButton" class="navbar-toggle-button">
+            <img src="https://stiq.gr/wp-content/uploads/2024/11/DALL·E-2024-11-01-12.57.25-A-minimalist-menu-icon-with-exactly-three-white-horizontal-lines-evenly-spaced-and-centered-within-a-clean-white-circular-border.-The-background-is-a-modified-1.png" alt="Toggle Navbar" />
+        </button>
+        <!-- Main content of the page -->
+        <div class="content-wrapper">
+            <!-- Video Background -->
+            <video autoplay muted loop id="background-video">
+                <source src="https://stiq.gr/wp-content/uploads/2024/10/forthandback.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <!-- Big quote -->
+            <div class="heading-quote-container">
+                <h1 id="main-heading"></h1> <!-- Main heading from content.json -->
+                <blockquote id="main-quote"></blockquote> <!-- Quote from content.json -->
+            </div>
+
+            <!-- Content for the three pillars -->
+            <div class="container">
+                <!-- First Pillar -->
+                <div class="pillar pillar-1">
+                    <h2 id="heading1"></h2> <!-- Heading for Pillar 1 -->
+                    <h3 id="subHeading1"></h3> <!-- Subheading for Pillar 1 (Optional) -->
+                    <p id="description1"></p> <!-- Description for Pillar 1 -->
+                </div>
+                
+                <!-- Second Pillar -->
+                <div class="pillar pillar-2">
+                    <h2 id="heading2"></h2> <!-- Heading for Pillar 2 -->
+                    <h3 id="subHeading2"></h3> <!-- Subheading for Pillar 2 (Optional) -->
+                    <p id="description2"></p> <!-- Description for Pillar 2 -->
+                </div>
+                
+                <!-- Third Pillar -->
+                <div class="pillar pillar-3">
+                    <h2 id="heading3"></h2> <!-- Heading for Pillar 3 -->
+                    <h3 id="subHeading3"></h3> <!-- Subheading for Pillar 3 (Optional) -->
+                    <p id="description3"></p> <!-- Description for Pillar 3 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll to Top Button -->
+        <button id="scrollToTopBtn">↑</button>
+        
+        <!-- Footer -->
+        <footer>
+            <div class="footer-container">
+                <!-- First Column: About Us -->
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p id="about-us"></p>
+                </div>
+
+                <!-- Second Column: Services -->
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul id="services-list"></ul>
+                </div>
+
+                <!-- Third Column: Contact and Social Links -->
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <!-- Replace with actual email address and phone number -->
+                    <p><a id="contact-email" href="mailto:info@example.com">Email</a></p>
+                    <p><a id="contact-phone" href="tel:+1234567890">Phone</a></p>
+                    <p id="contact-address"></p> 
+
+                    <!-- Social Media Links -->
+                    <div class="social-icons">
+                        <a href="#" id="facebook-link" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a>
+                        <a href="#" id="twitter-link" target="_blank"><img src="twitter-icon.png" alt="Twitter"></a>
+                        <a href="#" id="linkedin-link" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                        <a href="#" id="instagram-link" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div> <!-- End of page-container -->
+
+    <script src="script.js"></script>
+</body>
+</html>
