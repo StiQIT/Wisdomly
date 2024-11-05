@@ -157,13 +157,13 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener('DOMContentLoaded', function () {
     // Check if we are on desktop
     function isDesktop() {
-        return window.innerWidth >= 1024; // You can adjust the breakpoint as needed
+        return window.innerWidth >= 1024; // Adjust the breakpoint as needed
     }
 
     const navbar = document.querySelector('.navbar');
     const navbarToggleButton = document.getElementById('navbarToggleButton');
     let lastScrollY = window.scrollY;
-    let navbarHidden = false;
+    let navbarHidden = true; // Start hidden on mobile
 
     // Function to show the navbar
     function showNavbar() {
@@ -177,6 +177,19 @@ document.addEventListener('DOMContentLoaded', function () {
         navbar.style.transform = 'translateY(-100%)';
         navbarToggleButton.style.display = 'block'; // Show button when navbar is hidden
         navbarHidden = true;
+    }
+
+    // Function to hide the navbar on mobile (slide to the left)
+    function hideMobileNavbar() {
+        navbar.style.transform = 'translateX(-100%)';
+        navbarToggleButton.style.display = 'block'; // Show button when navbar is hidden
+        navbarHidden = true;
+    }
+
+    // Function to show the navbar on mobile (slide in from the left)
+    function showMobileNavbar() {
+        navbar.style.transform = 'translateX(0)'; // Slide in from the left
+        navbarHidden = false;
     }
 
     // Scroll event to detect scroll direction
@@ -193,20 +206,35 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Click event for the toggle button to show the navbar
+    // Click event for the toggle button to show/hide the navbar on mobile
     navbarToggleButton.addEventListener('click', function () {
         if (isDesktop()) {
             showNavbar();
+        } else {
+            // Toggle the navbar visibility on mobile
+            if (navbarHidden === true) {
+                showMobileNavbar();
+            } else {
+                hideMobileNavbar();
+            }
         }
     });
 
-    // Optional: Add a resize event to handle changes in window size
+    // Resize event to handle changes in window size
     window.addEventListener('resize', function () {
-        if (!isDesktop()) {
-            // Ensure the navbar is shown when resizing to a non-desktop size
+        if (isDesktop()) {
+            // On desktop, ensure the navbar is visible and button is hidden
             showNavbar();
+        } else {
+            // For mobile, hide the navbar and show the toggle button by default
+            hideMobileNavbar();
         }
     });
 
-    // Continue with any other existing code...
+    // Initial check on load
+    if (isDesktop()) {
+        showNavbar(); // Show navbar on desktop
+    } else {
+        hideMobileNavbar(); // Hide navbar and show button on mobile
+    }
 });

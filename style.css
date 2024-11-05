@@ -231,6 +231,7 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+    
 }
 
 /* Video background */
@@ -395,7 +396,7 @@ footer a:hover {
     .footer-column {
         margin-bottom: 30px;
     }
-}
+
 
 /* Service Container */
 .service-summary-container {
@@ -441,4 +442,103 @@ footer a:hover {
     margin: 0 auto;
     width: 100%;
     max-width: 800px;
+}
+.navbar-toggle-button {
+    display: block; /* Show button on mobile/tablet */
+    background-color: #333; /* Optional: Add background color for better visibility */
+    color: white; /* Optional: Button text color */
+    padding: 10px; /* Adjust padding for touch area */
+    border-radius: 5px; /* Optional: rounded corners */
+}
+#scrollToTopBtn {
+    display: flex; /* Show button on mobile/tablet */
+    bottom: 20px; /* Adjust bottom positioning if needed */
+    right: 20px; /* Adjust right positioning if needed */
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Add background color for better visibility */
+    color: #333; /* Optional: Change icon color for contrast */
+}
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto; /* Allow the height to grow based on content */
+    padding: 15px 0;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start;
+    transform: translateX(-100%); /* Start hidden to the left */
+    transition: transform 0.3s ease; /* Smooth slide-in transition */
+    background-color: #333; /* Optional: Background color for mobile */
+}
+
+/* Show the navbar when active (toggle this with JavaScript) */
+.navbar.show {
+    transform: translateX(0); /* Slide-in from the left */
+}
+
+/* Make logo centered and block-level */
+.navbar .logo {
+    width: 100%;
+    padding: 10px 20px;
+    justify-content: center;
+    background-color: #333; /* Optional: Background color behind logo */
+}
+
+/* Adjust nav links for vertical layout */
+.nav-links {
+    flex-direction: column;
+    width: 100%;
+    margin: 20px 0 0;
+    padding: 0;
+    align-items: flex-start;
+}
+
+/* Each link occupies full width */
+.nav-links li {
+    margin: 0;
+    width: 100%;
+}
+
+/* Adjust nav link styling */
+.nav-links li a {
+    width: 100%;
+    padding: 15px 20px; /* Add padding for touch area */
+    font-size: 1.2em;
+    text-align: left;
+    color: white;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Optional: separator between links */
+}
+
+/* Dropdown menu styling */
+.nav-links .dropdown-menu {
+    position: static; /* Place dropdown within flow */
+    transform: translateY(0); /* No translation */
+    opacity: 1; /* Always visible when shown */
+    visibility: visible;
+    padding: 0;
+    width: 100%;
+    margin-top: 0;
+}
+
+/* Dropdown items for mobile */
+.nav-links .dropdown-menu li a {
+    padding: 10px 20px;
+    width: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8); /* Optional: background for dropdown items */
+}
+
+/* Optional: Adjust hover color */
+.nav-links li a:hover {
+    background-color: #444; /* Darker background on hover */
+    color: #f1c40f;
+}
+
+.nav-links .dropdown-menu li a:hover {
+    background-color: #555; /* Different background for dropdown items */
+    color: #f1c40f;
+}
 }
