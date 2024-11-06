@@ -389,166 +389,120 @@ footer a:hover {
 
 /* Responsive Footer */
 @media (max-width: 768px) {
-    .footer-container {
+    /* Navbar Styling */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
         flex-direction: column;
+        align-items: flex-start;
+        background-color: #333;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        overflow-y: auto;
+        padding: 0;
+    }
+
+    /* Show the navbar when active (toggle with JS by adding 'show' class) */
+    .navbar.show {
+        transform: translateX(0);
+    }
+
+    /* Logo Styling */
+    .logo {
+        display: none;
+    }
+
+    .logo img {
+        display: none;
+    }
+
+    .navbar .logo h2 {
+        display: none;
+    }
+
+    /* Nav Links Wrapper positioned explicitly below logo */
+    .nav-links-wrapper {
+        position: fixed; /* Make it cover the entire viewport */
+        top: 0;
+        left: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        background: transparent;
+        padding-top: 20px; /* Adjust the top padding for spacing */
+        padding-left: 20px; /* Optional: add some left padding for alignment */
+        margin: 0;
+        border-radius: 0;
+        z-index: 1000; /* Ensure it sits on top of other elements */
+        background-color: #362b46;
+    }
+
+    /* Nav Links Layout */
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        align-items: flex-start; /* Left align the text */
+    }
+
+    /* Each link styling */
+    .nav-links li {
+        margin: 5px 20px; /* Add margin for spacing from the edges */
+        width: auto;
+        position: relative;
+    }
+
+    .nav-links li a {
+        font-size: 1.2em;
+        color: white;
+        text-decoration: none;
+        background-color: transparent;
+        border-radius: 8px;
+        
+    }
+
+    /* Dropdown Menu Styling (if any) */
+    .nav-links .dropdown-menu {
+        display: none; /* Hidden by default */
+        position: relative;
+        top: 0;
+        right: 0; /* Position the dropdown exactly at the right edge */
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 10px;
+        width: 150px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+    }
+
+    /* Show dropdown menu on click */
+    .dropdown:focus-within .dropdown-menu {
+        display: flex; /* Show dropdown on click or hover */
+        flex-direction: column;
+    }
+
+    /* Dropdown item styling */
+    .nav-links .dropdown-menu li a {
+        padding: 10px;
+        color: white;
+        background-color: transparent;
         text-align: left;
     }
-    .footer-column {
-        margin-bottom: 30px;
+
+    /* Hover effects */
+    .nav-links li a:hover {
+        background-color: #444;
+        color: #f1c40f;
     }
 
-
-/* Service Container */
-.service-summary-container {
-    background-color: rgba(119, 117, 119, 0.1);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 100px;
-    margin-bottom: 20px;
+    .nav-links .dropdown-menu li a:hover {
+        background-color: #555;
+        color: #f1c40f;
+    }
 }
 
-.service-summary-heading {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    color: #f8f4f4;
-}
-
-.service-summary-text {
-    font-size: 1em;
-    color: #f8f4f4;
-    line-height: 1.5;
-    margin: 0;
-}
-
-.service-summary-container,
-.service-image {
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.service-image {
-    max-width: 800px;
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 30px;
-}
-
-.service-summary-table {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 800px;
-}
-.navbar-toggle-button {
-    display: block; /* Show button on mobile/tablet */
-    background-color: #333; /* Optional: Add background color for better visibility */
-    color: white; /* Optional: Button text color */
-    padding: 10px; /* Adjust padding for touch area */
-    border-radius: 50px; /* Optional: rounded corners */
-}
-.navbar-toggle-button img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    
-    
-}
-#scrollToTopBtn {
-    display: flex; /* Show button on mobile/tablet */
-    bottom: 20px; /* Adjust bottom positioning if needed */
-    right: 20px; /* Adjust right positioning if needed */
-    background-color: rgba(255, 255, 255, 0.8); /* Optional: Add background color for better visibility */
-    color: #333; /* Optional: Change icon color for contrast */
-}
-
-
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* Full height to cover the screen */
-    padding: 20px;
-    flex-direction: column;
-    align-items: flex-start; /* Align items to the start */
-    background-color: #333; /* Navbar background color */
-    transform: translateX(-100%); /* Start hidden off-screen */
-    transition: transform 0.3s ease; /* Smooth slide-in transition */
-    z-index: 1000; /* Ensure it covers other content */
-    overflow-y: auto; /* Enable scrolling if content overflows */
-}
-
-/* Show the navbar when active (toggle with JS by adding 'show' class) */
-.navbar.show {
-    transform: translateX(0); /* Slide-in from the left */
-}
-
-/* Adjust nav links for vertical layout */
-.nav-links {
-    flex-direction: column;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-/* Each link occupies full width */
-.nav-links li {
-    margin: 5px 0;
-    width: 100%;
-    text-align: left; /* Align text to the left */
-    position: relative; /* To position the dropdown */
-}
-
-/* Main nav links styling */
-.nav-links li a {
-    width: 100%;
-    padding: 5px 20px;
-    font-size: 1.5em;
-    color: white;
-    text-decoration: none;
-    background-color: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Separator */
-}
-
-/* Hide dropdown menus initially */
-.nav-links .dropdown-menu {
-    display: none; /* Hidden by default */
-    position: absolute;
-    top: 0;
-    right: -100%; /* Position it to the right of the main link */
-    background-color: rgba(0, 0, 0, 0.9); /* Background color for dropdown */
-    padding: 10px;
-    width: 150px; /* Set a fixed width for the dropdown */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
-}
-
-/* Show dropdown menu on click using :focus-within */
-.dropdown:focus-within .dropdown-menu {
-    display: flex; /* Show dropdown on click */
-    flex-direction: column;
-    right: 10%; /* Adjust position so it doesn't extend out of view */
-}
-
-/* Dropdown item styling */
-.nav-links .dropdown-menu li a {
-    padding: 10px;
-    color: white;
-    background-color: transparent;
-    text-align: left;
-}
-
-/* Hover effect for links */
-.nav-links li a:hover {
-    background-color: #444;
-    color: #f1c40f;
-}
-
-.nav-links .dropdown-menu li a:hover {
-    background-color: #555;
-    color: #f1c40f;
-}
-}
