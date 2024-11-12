@@ -400,8 +400,8 @@ footer a:hover {
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -409,7 +409,7 @@ footer a:hover {
         transform: translateX(-100%);
         transition: transform 0.3s ease;
         z-index: 1000;
-        overflow-y: auto;
+       
         padding: 0;
     }
 
@@ -470,6 +470,10 @@ footer a:hover {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         border-radius: 0.5em;
     }
+    .content-wrapper {
+        margin-top: 12vh; /* Account for fixed navbar */
+        /* padding: 2vw; */
+    }
 
     .dropdown:focus-within .dropdown-menu {
         display: flex;
@@ -508,7 +512,7 @@ footer a:hover {
         transform: translateX(-100%);
         transition: transform 0.3s ease;
         z-index: 1000;
-        overflow-y: auto;
+        
         padding: 0;
     }
 
@@ -554,7 +558,7 @@ footer a:hover {
     /* Content Adjustments */
     .content-wrapper {
         margin-top: 12vh; /* Account for fixed navbar */
-        padding: 2vw;
+        /* padding: 2vw; */
     }
 
     /* Heading and Quote */

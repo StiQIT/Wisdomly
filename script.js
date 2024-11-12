@@ -170,25 +170,24 @@ document.addEventListener('DOMContentLoaded', function () {
             scrollToTopBtn.style.display = "none"; // Hide button when at the top
         }
     }
-        // Initial check when the page loads
-        toggleScrollToTopBtn();
+
 
         // Check scroll position when the user scrolls
-        window.addEventListener("scroll", function() {
+    window.addEventListener("scroll", function() {
             toggleScrollToTopBtn();
-        });
+    });
     
         // Scroll to the top of the page when the button is clicked
-        scrollToTopBtn.addEventListener("click", function() {
-            console.log("Button clicked! Scrolling to top.");
-            window.scrollTo({
+    scrollToTopBtn.addEventListener("click", function() {
+        console.log("Button clicked! Scrolling to top.");
+        window.scrollTo({
                 top: 0,
                 behavior: "smooth"
-            });
         });
+    });
     // Check if we are on desktop
     function isDesktop() {
-        return window.innerWidth >= 1024; // Adjust the breakpoint as needed
+        return window.innerWidth >= 720; // Adjust the breakpoint as needed
     }
 
     const navbar = document.querySelector('.navbar');
@@ -221,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to hide the navbar on mobile (slide to the left)
     function hideMobileNavbar() {
-        navbar.style.transform = 'translateX(-100%)';
+        navbar.style.transform = 'translateX(-200vw)';
         navbarToggleButton.style.display = 'block'; // Show button when navbar is hidden
         navbarHidden = true;
         scrollToTopBtn.style.display = "block";
@@ -277,6 +276,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initial check on load
     if (isDesktop()) {
+                // Initial check when the page loads
+        toggleScrollToTopBtn();
         showNavbar(); // Show navbar on desktop
     } else {
         hideMobileNavbar(); // Hide navbar and show button on mobile
