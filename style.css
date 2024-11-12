@@ -44,15 +44,13 @@ body {
 .page-container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure the page takes the full height of the viewport */
+    min-height: 100vh; /* Ensure full viewport height */
 }
 .content-wrapper {
-    flex: 1;
-    min-height: 80vh; /* Set minimum height to ensure enough space */
-    padding-bottom: 40px; /* Add padding at the bottom to prevent overlap with footer */
-    margin-top: 80px;
+    flex: 1; /* Grow to push footer to the bottom */
+    padding-bottom: 40px; /* Prevent content from overlapping footer */
+    
 }
-
 /* Styles for the main heading and quote */
 .heading-quote-container {
     text-align: center;
@@ -251,14 +249,12 @@ body {
 /* Container for the pillars */
 .container {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    height: 100vh;
+    flex-wrap: wrap;
     padding: 20px;
-    position: relative;
-    perspective: 800px;
-    z-index: 1;
-    padding-top: 120px;
+    gap: 20px; /* Optional gap between pillars */
 }
 
 /* Base styling for the pillars */
@@ -315,8 +311,9 @@ footer {
     color: #f1c40f;
     padding: 40px 20px;
     text-align: center;
-    margin-top: auto;
     width: 100%;
+    /* Margin-top can be removed if it's causing floating issues */
+    margin-top: auto;
 }
 
 .footer-container {
@@ -389,6 +386,7 @@ footer a:hover {
 
 /* Responsive Footer */
 @media (max-width: 768px) {
+
     .no-scroll {
         overflow: hidden !important;
         position: fixed;
@@ -490,10 +488,22 @@ footer a:hover {
         background-color: #555;
         color: #f1c40f;
     }
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 2vw;
+        padding-bottom: 10vh; /* Extra padding at the bottom to prevent overlap */
+    }
+
+    .pillar {
+        width: 90%;
+        margin-bottom: 4vh; /* Increased bottom margin for better separation */
+    }
 }
 
 /* Mobile Styles */
 @media (max-width: 480px) {
+
     .no-scroll {
         overflow: hidden;
     }
@@ -580,12 +590,14 @@ footer a:hover {
         flex-direction: column;
         align-items: center;
         padding: 2vw;
+        padding-bottom: 10vh; /* Extra padding at the bottom to prevent overlap */
     }
 
     .pillar {
         width: 90%;
-        margin-bottom: 2vh;
+        margin-bottom: 4vh; /* Increased bottom margin for better separation */
     }
+    
 
     /* Footer */
     .footer-container {
