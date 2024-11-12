@@ -119,10 +119,44 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Scroll to Top Button
-document.addEventListener("DOMContentLoaded", function() {
+// document.addEventListener("DOMContentLoaded", function() {
+//     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+//     // Ensure the button exists
+//     if (!scrollToTopBtn) {
+//         console.error("Scroll to Top button NOT found in DOM");
+//         return;
+//     }
+
+//     // Function to toggle the visibility of the button based on scroll position
+//     function toggleScrollToTopBtn() {
+//         if (window.scrollY > 100) { // Show button after scrolling 100px down
+//             scrollToTopBtn.style.display = "block";
+//         } else {
+//             scrollToTopBtn.style.display = "none"; // Hide button when at the top
+//         }
+//     }
+
+//     // Initial check when the page loads
+//     toggleScrollToTopBtn();
+
+//     // Check scroll position when the user scrolls
+//     window.addEventListener("scroll", function() {
+//         toggleScrollToTopBtn();
+//     });
+
+//     // Scroll to the top of the page when the button is clicked
+//     scrollToTopBtn.addEventListener("click", function() {
+//         console.log("Button clicked! Scrolling to top.");
+//         window.scrollTo({
+//             top: 0,
+//             behavior: "smooth"
+//         });
+//     });
+// });
+document.addEventListener('DOMContentLoaded', function () {
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-    // Ensure the button exists
     if (!scrollToTopBtn) {
         console.error("Scroll to Top button NOT found in DOM");
         return;
@@ -136,25 +170,22 @@ document.addEventListener("DOMContentLoaded", function() {
             scrollToTopBtn.style.display = "none"; // Hide button when at the top
         }
     }
-
-    // Initial check when the page loads
-    toggleScrollToTopBtn();
-
-    // Check scroll position when the user scrolls
-    window.addEventListener("scroll", function() {
+        // Initial check when the page loads
         toggleScrollToTopBtn();
-    });
 
-    // Scroll to the top of the page when the button is clicked
-    scrollToTopBtn.addEventListener("click", function() {
-        console.log("Button clicked! Scrolling to top.");
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
+        // Check scroll position when the user scrolls
+        window.addEventListener("scroll", function() {
+            toggleScrollToTopBtn();
         });
-    });
-});
-document.addEventListener('DOMContentLoaded', function () {
+    
+        // Scroll to the top of the page when the button is clicked
+        scrollToTopBtn.addEventListener("click", function() {
+            console.log("Button clicked! Scrolling to top.");
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
     // Check if we are on desktop
     function isDesktop() {
         return window.innerWidth >= 1024; // Adjust the breakpoint as needed
@@ -164,6 +195,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const navbarToggleButton = document.getElementById('navbarToggleButton');
     let lastScrollY = window.scrollY;
     let navbarHidden = true; // Start hidden on mobile
+
+    function disableScroll() {
+        document.body.classList.add('no-scroll');
+    }
+
+    function enableScroll() {
+        document.body.classList.remove('no-scroll');
+    }
 
     // Function to show the navbar
     function showNavbar() {
@@ -177,6 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
         navbar.style.transform = 'translateY(-100%)';
         navbarToggleButton.style.display = 'block'; // Show button when navbar is hidden
         navbarHidden = true;
+        
     }
 
     // Function to hide the navbar on mobile (slide to the left)
@@ -184,13 +224,17 @@ document.addEventListener('DOMContentLoaded', function () {
         navbar.style.transform = 'translateX(-100%)';
         navbarToggleButton.style.display = 'block'; // Show button when navbar is hidden
         navbarHidden = true;
+        scrollToTopBtn.style.display = "block";
+        enableScroll();
     }
 
     // Function to show the navbar on mobile (slide in from the left)
     function showMobileNavbar() {
         navbar.style.transform = 'translateX(0)'; // Slide in from the left
         navbarHidden = false;
-    }
+        disableScroll();
+        scrollToTopBtn.style.display = "none";
+        }
 
     // Scroll event to detect scroll direction
     window.addEventListener('scroll', function () {
