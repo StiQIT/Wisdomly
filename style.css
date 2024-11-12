@@ -506,3 +506,127 @@ footer a:hover {
     }
 }
 
+/* Mobile Styles */
+@media (max-width: 480px) {
+    /* Navbar Styling */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #333;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        overflow-y: auto;
+        padding: 0;
+    }
+
+    /* Toggle button shows for mobile */
+    .navbar-toggle-button {
+        display: block;
+    }
+
+    /* Show the navbar when active */
+    .navbar.show {
+        transform: translateX(0);
+    }
+
+    /* Logo hides on mobile */
+    .logo {
+        display: none;
+    }
+
+    /* Nav Links */
+    .nav-links-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding-top: 20px;
+        padding-left: 20px;
+        background-color: #362b46;
+        z-index: 1000;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    .nav-links li a {
+        font-size: 1em;
+        padding: 10px 0;
+        color: white;
+    }
+
+    /* Dropdown Menu */
+    .nav-links .dropdown-menu {
+        display: none;
+    }
+
+    /* Content Adjustments */
+    .content-wrapper {
+        margin-top: 100px; /* Account for fixed navbar */
+        padding: 10px;
+    }
+
+    /* Heading and Quote */
+    .heading-quote-container {
+        padding: 0 10px;
+        margin-top: 100px;
+    }
+
+    .heading-quote-container h1 {
+        font-size: 2em;
+    }
+
+    .heading-quote-container blockquote {
+        font-size: 1.2em;
+    }
+
+    /* Pillar Section */
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .pillar {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    /* Footer Adjustments */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer-column h3 {
+        font-size: 1.2em;
+    }
+
+    /* Scroll To Top Button */
+    #scrollToTopBtn {
+        width: 40px;
+        height: 40px;
+        font-size: 2em;
+    }
+}
