@@ -1,10 +1,13 @@
 
 /* Reset padding and margin for body and html */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+*{
     box-sizing: border-box;
+    
+}
+body, html {
+
+    font-family: Arial, sans-serif;
+    
     overflow-x: hidden;
 }
 
@@ -247,19 +250,20 @@ body {
 }
 
 /* Container for the pillars */
+
 .container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    justify-content: space-between; /* Space between pillars */
+    align-items: stretch;
+    flex-wrap: nowrap; /* Prevent wrapping on desktop */
     padding: 20px;
-    gap: 20px; /* Optional gap between pillars */
+    gap: 20px; /* Space between pillars */
+    padding-top: 120px;
 }
 
 /* Base styling for the pillars */
 .pillar {
-    width: 32%;
+    flex: 1;
     padding: 10px;
     background-color: rgba(119, 117, 119, 0.1);
     color: white;
