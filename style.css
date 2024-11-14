@@ -181,4 +181,78 @@ body {
 }
 
 
-/* Responsive Footer */
+/* Center the container */
+/* General styling for the grid layout */
+.areas-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--primary-color);;
+}
+
+.areas-of-use {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for desktop */
+    gap: 30px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.area-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 6px 12px rgba(245, 244, 244, 0.3);
+}
+
+.area-content {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.area-image {
+    max-width: 80%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+/* Specific colors for each area */
+.business {
+    background-color: #3498db; /* Blue for Business */
+}
+
+.technology {
+    background-color: #9b59b6; /* Purple for Technology */
+}
+
+.sports {
+    background-color: #e67e22; /* Orange for Sports */
+}
+
+.education {
+    background-color: #2ecc71; /* Green for Education */
+}
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .area-image {
+        display: none; /* Hide images on mobile */
+    }
+
+    .areas-of-use {
+        grid-template-columns: 1fr; /* Single column layout on mobile */
+    }
+
+    .area-cell {
+        width: 100%; /* Full-width cells on mobile */
+    }
+
+    /* If .area-cell is wrapping only an image, hide it on mobile */
+    .area-cell:has(.area-image) {
+        display: none;
+    }
+}

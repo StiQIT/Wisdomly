@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
       .then(response => response.json())
       .then(data => {
           console.log('JSON Data:', data); // Log the JSON data to see if it's fetched properly
-
+          const areasGrid = document.getElementById('areasGrid');
           const navbarHeading = data.navbarHeading;
           const logoUrl = data.logoUrl;
           const mainHeading = data.mainHeading;
@@ -55,7 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
           const subHeadings = data.subHeadings;
           const descriptions = data.descriptions;
           const footerData = data.footer;
-
+          areasGrid.innerHTML = '';
+          const isMobile = window.innerWidth <= 768; // Check if mobile
           // Set the logo and navbar heading
           if (document.getElementById('logo')) {
             document.getElementById('logo').src = logoUrl;
@@ -114,6 +115,30 @@ document.addEventListener('DOMContentLoaded', function () {
           document.getElementById('twitter-link').href = footerData.socialLinks.twitter;
           document.getElementById('linkedin-link').href = footerData.socialLinks.linkedin;
           document.getElementById('instagram-link').href = footerData.socialLinks.instagram;
+
+
+          data.areas.forEach((area, index) => {
+            // First cell for each area with text
+            const textCell = document.createElement('div');
+            textCell.classList.add('area-cell', 'area-content');
+            textCell.innerHTML = `<h3>${area.title}</h3><p>${area.description}</p>`;
+
+            // Second cell for each area with image
+            const imageCell = document.createElement('div');
+            imageCell.classList.add('area-cell');
+            imageCell.innerHTML = `<img src="${area.image}" alt="${area.title} Image" class="area-image">`;
+
+            // Alternate placement based on index
+            if (index % 2 === 0) {
+                // Row with text first, then image
+                areasGrid.appendChild(textCell);
+                areasGrid.appendChild(imageCell);
+            } else {
+                // Row with image first, then text
+                areasGrid.appendChild(imageCell);
+                areasGrid.appendChild(textCell);
+            }
+        });
       })
       .catch(error => console.error('Error loading JSON file:', error));
 });
