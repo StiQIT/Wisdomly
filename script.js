@@ -144,39 +144,71 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const root = document.documentElement;
     const themeSwitch = document.getElementById('theme-switch');
     const video = document.getElementById('background-video');
 
-    // Function to apply dark mode colors and filter
+    // Function to apply dark mode
     function applyDarkMode() {
-        root.style.setProperty('--pillar-background', 'rgba(119, 117, 119, 0.1)');
-        root.style.setProperty('--primary-color', '#362b46');
-        root.style.setProperty('--link-color', '#f1c40f');
-        root.style.setProperty('--border-color', 'silver');
-        root.style.setProperty('--hover-color', '#f39c12');
-        root.style.setProperty('--white-color', 'white');
+        document.body.style.backgroundColor = '#362b46';
+        document.body.style.color = 'white';
+
+        document.querySelectorAll('.pillar').forEach(pillar => {
+            pillar.style.backgroundColor = 'rgba(119, 117, 119, 0.1)';
+            pillar.style.color = 'white';
+            pillar.style.borderColor = 'silver';
+        });
+
+        document.querySelectorAll('.areas-container').forEach(container => {
+            container.style.backgroundColor = '#362b46';
+            container.style.color = 'white';
+        });
+
+        document.querySelectorAll('.area-cell').forEach(areaCell => {
+            areaCell.style.backgroundColor = 'rgba(119, 117, 119, 0.1)';
+            areaCell.style.color = 'white';
+            areaCell.style.borderColor = 'silver';
+        });
+
+        document.documentElement.style.setProperty('--link-color', '#f1c40f');
+        document.documentElement.style.setProperty('--border-color', 'silver');
+        document.documentElement.style.setProperty('--hover-color', '#f39c12');
         video.style.filter = 'hue-rotate(80deg) brightness(0.5)';
     }
-    
+
+    // Function to apply light mode
     function applyLightMode() {
-        root.style.setProperty('--pillar-background', 'rgba(240, 221, 240, 0.918)');
-        root.style.setProperty('--primary-color', 'white');
-        root.style.setProperty('--link-color', '#362b46');
-        root.style.setProperty('--border-color', '#362b46');
-        root.style.setProperty('--hover-color', '#9908a7');
-        root.style.setProperty('--white-color', 'black');
+        document.body.style.backgroundColor = 'white';
+        document.body.style.color = 'black';
+
+        document.querySelectorAll('.pillar').forEach(pillar => {
+            pillar.style.backgroundColor = 'rgba(240, 221, 240, 0.918)';
+            pillar.style.color = 'black';
+            pillar.style.borderColor = '#362b46';
+        });
+
+        document.querySelectorAll('.areas-container').forEach(container => {
+            container.style.backgroundColor = 'white';
+            container.style.color = 'black';
+        });
+
+        document.querySelectorAll('.area-cell').forEach(areaCell => {
+            areaCell.style.backgroundColor = 'rgba(240, 221, 240, 0.918)';
+            areaCell.style.color = 'black';
+            areaCell.style.borderColor = '#362b46';
+        });
+
+        document.documentElement.style.setProperty('--link-color', '#362b46');
+        document.documentElement.style.setProperty('--border-color', '#362b46');
+        document.documentElement.style.setProperty('--hover-color', '#9908a7');
         video.style.filter = 'hue-rotate(0deg) brightness(1)';
     }
 
-    // Set initial theme based on the checkbox state
     if (themeSwitch.checked) {
         applyDarkMode();
     } else {
         applyLightMode();
     }
 
-    // Toggle between themes on checkbox change
     themeSwitch.addEventListener('change', function () {
         if (this.checked) {
             applyDarkMode();
@@ -185,10 +217,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-
-
-
 
 
 document.addEventListener('DOMContentLoaded', function () {

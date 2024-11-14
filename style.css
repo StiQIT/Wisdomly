@@ -90,7 +90,7 @@ body {
     font-size: 1.5em;
     font-style: italic;
     margin: 0;
-    color: var(--link-color);
+    color: #f1c40f;;
     line-height: 1.5;
 }
 
@@ -220,7 +220,7 @@ body {
     border-radius: 10px;
     color: var(--white-color);
     box-shadow: 0 6px 12px rgba(245, 244, 244, 0.3);
-    background-color: transparent;
+    background-color: var(--pillar-background);
 }
 
 .area-content {
