@@ -1,4 +1,9 @@
-
+:root {
+    --primary-color: #362b46;
+    --secondary-color: #f1c40f;
+    --border-color :silver;
+    --hover-color : #f39c12;
+  }
 /* Reset padding and margin for body and html */
 *{
     box-sizing: border-box;
@@ -19,15 +24,15 @@ body, html {
 
 /* Scrollbar track */
 ::-webkit-scrollbar-track {
-    background: #362b46; /* Dark background */
+    background: var(--primary-color); /* Dark background */
      /* Rounded corners */
 }
 
 /* Scrollbar thumb */
 ::-webkit-scrollbar-thumb {
-    background: #362b46; /* Light gray for contrast */
+    background: var(--primary-color); /* Light gray for contrast */
     border-radius: 10px; /* Rounded corners */
-    border: 2px solid silver; /* Silver border */
+    border: 2px solid var(--border-color); /* Silver border */
 }
 
 /* Scrollbar thumb hover effect */
@@ -39,7 +44,7 @@ body, html {
 /* For Firefox */
 body {
     scrollbar-width: thin;
-    scrollbar-color: #888 #362b46; /* Thumb color, track color */
+    scrollbar-color: #888 var(--primary-color); /* Thumb color, track color */
 }
 
 
@@ -267,19 +272,42 @@ body {
     padding: 10px;
     background-color: rgba(119, 117, 119, 0.1);
     color: white;
-    border: 1px solid silver;
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     opacity: 0;
     transform: translateY(100px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    display: flex;
+    
+    flex-direction: column;
+    
 }
 
 /* Hover effect to zoom in the pillar */
 .pillar:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(202, 4, 4, 0.8);
+}
+
+.pillar-button {
+    align-self: center;
+    margin-top: auto; /* Space between content and button */
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #f1c40f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.pillar-button:hover {
+    background-color: var(--hover-color); /* Hover color */
+    
 }
 
 /* Scroll to Top Button Styling */
@@ -292,7 +320,7 @@ body {
     background-color: rgba(255, 255, 255, 0);
     color: white;
     font-size: 2.4em;
-    border: 2px solid white;
+    border: 2px solid var(--border-color);
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -363,7 +391,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #f39c12;
+    color: var(--hover-color);
     text-decoration: underline;
 }
 
@@ -384,7 +412,7 @@ footer a:hover {
 }
 
 .footer-column a:hover {
-    color: #f39c12;
+    color: var(--hover-color);
     text-decoration: underline;
 }
 
