@@ -207,6 +207,7 @@ body {
     border-radius: 10px;
     color: white;
     box-shadow: 0 6px 12px rgba(245, 244, 244, 0.3);
+    background-color: transparent;
 }
 
 .area-content {
