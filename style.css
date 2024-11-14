@@ -1,14 +1,26 @@
 :root {
-    --primary-color: #362b46;
+
+    /* Dark Mode  */
+    --primary-color : #362b46;
     --link-color: #f1c40f;
     --border-color :silver;
     --hover-color : #f39c12;
     --white-color : white;
+    --filter-dark : hue-rotate(80deg) brightness(0.5);
+    --pillar-backround : rgba(119, 117, 119, 0.1);
+    /* Light Mode  */
+    --bg-primary-color: white;
+    --bg-link-color: ##362b46;
+    --bg-border-color: #362b46;
+    --bg-white-color: black;
+    --bg-hover-color : #9908a7;
+    --filter-light: hue-rotate(0deg) brightness(1);
+    --bg-pillar-backround : rgba(240, 221, 240, 0.918);
   }
 /* Reset padding and margin for body and html     var(--primary-color);   */
 *{
     box-sizing: border-box;
-    
+    color: var(--white-color);
 }
 body, html {
 
@@ -114,7 +126,7 @@ body {
 .pillar {
     flex: 1;
     padding: 10px;
-    background-color: rgba(119, 117, 119, 0.1);
+    background-color: var(--pillar-backround);
     color: var(--white-color);
     border: 1px solid var(--border-color);
     border-radius: 10px;

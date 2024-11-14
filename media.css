@@ -43,7 +43,7 @@
         height: 100vh; /* Full viewport height */
         padding-top: 5vh; /* Relative padding for spacing */
         padding-left: 5vw; /* Relative left padding */
-        background-color: #362b46;
+        background-color: var(--primary-color);
         z-index: 1000;
     }
 

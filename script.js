@@ -143,42 +143,54 @@ document.addEventListener('DOMContentLoaded', function () {
       .catch(error => console.error('Error loading JSON file:', error));
 });
 
-// Scroll to Top Button
-// document.addEventListener("DOMContentLoaded", function() {
-//     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+document.addEventListener('DOMContentLoaded', function () {
+    const root = document.documentElement;
+    const themeSwitch = document.getElementById('theme-switch');
+    const video = document.getElementById('background-video');
 
-//     // Ensure the button exists
-//     if (!scrollToTopBtn) {
-//         console.error("Scroll to Top button NOT found in DOM");
-//         return;
-//     }
+    // Function to apply dark mode colors and filter
+    function applyDarkMode() {
+        root.style.setProperty('--pillar-background', 'rgba(119, 117, 119, 0.1)');
+        root.style.setProperty('--primary-color', '#362b46');
+        root.style.setProperty('--link-color', '#f1c40f');
+        root.style.setProperty('--border-color', 'silver');
+        root.style.setProperty('--hover-color', '#f39c12');
+        root.style.setProperty('--white-color', 'white');
+        video.style.filter = 'hue-rotate(80deg) brightness(0.5)';
+    }
+    
+    function applyLightMode() {
+        root.style.setProperty('--pillar-background', 'rgba(240, 221, 240, 0.918)');
+        root.style.setProperty('--primary-color', 'white');
+        root.style.setProperty('--link-color', '#362b46');
+        root.style.setProperty('--border-color', '#362b46');
+        root.style.setProperty('--hover-color', '#9908a7');
+        root.style.setProperty('--white-color', 'black');
+        video.style.filter = 'hue-rotate(0deg) brightness(1)';
+    }
 
-//     // Function to toggle the visibility of the button based on scroll position
-//     function toggleScrollToTopBtn() {
-//         if (window.scrollY > 100) { // Show button after scrolling 100px down
-//             scrollToTopBtn.style.display = "block";
-//         } else {
-//             scrollToTopBtn.style.display = "none"; // Hide button when at the top
-//         }
-//     }
+    // Set initial theme based on the checkbox state
+    if (themeSwitch.checked) {
+        applyDarkMode();
+    } else {
+        applyLightMode();
+    }
 
-//     // Initial check when the page loads
-//     toggleScrollToTopBtn();
+    // Toggle between themes on checkbox change
+    themeSwitch.addEventListener('change', function () {
+        if (this.checked) {
+            applyDarkMode();
+        } else {
+            applyLightMode();
+        }
+    });
+});
 
-//     // Check scroll position when the user scrolls
-//     window.addEventListener("scroll", function() {
-//         toggleScrollToTopBtn();
-//     });
 
-//     // Scroll to the top of the page when the button is clicked
-//     scrollToTopBtn.addEventListener("click", function() {
-//         console.log("Button clicked! Scrolling to top.");
-//         window.scrollTo({
-//             top: 0,
-//             behavior: "smooth"
-//         });
-//     });
-// });
+
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
