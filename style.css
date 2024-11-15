@@ -1,6 +1,6 @@
-:root {
+/*:root {
 
-    /* Dark Mode  */
+    /* Dark Mode  
     --primary-color : #362b46;
     --link-color: #f1c40f;
     --border-color :silver;
@@ -8,7 +8,7 @@
     --white-color : white;
     --filter-dark : hue-rotate(80deg) brightness(0.5);
     --pillar-backround : rgba(119, 117, 119, 0.1);
-    /* Light Mode  */
+    
     --bg-primary-color: white;
     --bg-link-color: ##362b46;
     --bg-border-color: #362b46;
@@ -16,7 +16,36 @@
     --bg-hover-color : #9908a7;
     --filter-light: hue-rotate(0deg) brightness(1);
     --bg-pillar-backround : rgba(240, 221, 240, 0.918);
-  }
+  }*/
+
+  :root {
+    
+    --primary-color: white;
+    --secondary-color: #f1c40f;
+    --border-color: #362b46;
+    --text-color: black;
+    --hover-color: #9908a7;
+    --background-color: #f8f9fa;
+    --navbar-bg: white;
+    --footer-bg: rgba(255, 255, 255, 0.048);
+    --pillar-bg: rgba(240, 221, 240, 0.918);
+    --video-filter: hue-rotate(0deg) brightness(1);
+    --link-color: #362b46;
+
+    
+    --dark-primary-color: #362b46;
+    --dark-secondary-color: #f1c40f;
+    --dark-border-color: silver;
+    --dark-text-color: white;
+    --dark-hover-color: #f39c12;
+    --dark-background-color: #242424;
+    --dark-navbar-bg: #333;
+    --dark-footer-bg: rgba(0, 0, 0, 0.7);
+    --dark-pillar-bg: rgba(119, 117, 119, 0.1);
+    --dark-video-filter: hue-rotate(80deg) brightness(0.5);
+    --dark-link-color: #f1c40f;
+}
+
 /* Reset padding and margin for body and html     var(--primary-color);   */
 *{
     box-sizing: border-box;
@@ -25,7 +54,7 @@
 body, html {
 
     font-family: Arial, sans-serif;
-    
+    color: var(--text-color);
     overflow-x: hidden;
 }
 
@@ -37,7 +66,7 @@ body, html {
 
 /* Scrollbar track */
 ::-webkit-scrollbar-track {
-    background: var(--primary-color); /* Dark background */
+    background: #362b46; /* Dark background */
      /* Rounded corners */
 }
 
@@ -75,7 +104,7 @@ body {
 /* Styles for the main heading and quote */
 .heading-quote-container {
     text-align: center;
-    color: var(--white-color);
+    color: white;
     margin-top: 150px;
     margin-bottom: 150px;
     padding: 0 20px;
@@ -107,7 +136,7 @@ body {
     object-fit: cover;
     top: 0;
     left: 0;
-    filter: hue-rotate(80deg) brightness(0.5);
+    filter: var(--video-filter);
 }
 
 /* Container for the pillars */
@@ -126,8 +155,8 @@ body {
 .pillar {
     flex: 1;
     padding: 10px;
-    background-color: var(--pillar-backround);
-    color: var(--white-color);
+    background-color: var(--pillar-bg);
+    color: var(--text-color);
     border: 1px solid var(--border-color);
     border-radius: 10px;
     opacity: 0;
@@ -218,9 +247,10 @@ body {
     flex-direction: column;
     padding: 40px;
     border-radius: 10px;
-    color: var(--white-color);
+    color: var(--text-color);
     box-shadow: 0 6px 12px rgba(245, 244, 244, 0.3);
-    background-color: var(--pillar-background);
+    background-color: var(--pillar-bg);
+    border: 1px solid var(--border-color);
 }
 
 .area-content {

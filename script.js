@@ -145,78 +145,62 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
     const themeSwitch = document.getElementById('theme-switch');
-    const video = document.getElementById('background-video');
+    const root = document.documentElement;
 
-    // Function to apply dark mode
-    function applyDarkMode() {
-        document.body.style.backgroundColor = '#362b46';
-        document.body.style.color = 'white';
-
-        document.querySelectorAll('.pillar').forEach(pillar => {
-            pillar.style.backgroundColor = 'rgba(119, 117, 119, 0.1)';
-            pillar.style.color = 'white';
-            pillar.style.borderColor = 'silver';
-        });
-
-        document.querySelectorAll('.areas-container').forEach(container => {
-            container.style.backgroundColor = '#362b46';
-            container.style.color = 'white';
-        });
-
-        document.querySelectorAll('.area-cell').forEach(areaCell => {
-            areaCell.style.backgroundColor = 'rgba(119, 117, 119, 0.1)';
-            areaCell.style.color = 'white';
-            areaCell.style.borderColor = 'silver';
-        });
-
-        document.documentElement.style.setProperty('--link-color', '#f1c40f');
-        document.documentElement.style.setProperty('--border-color', 'silver');
-        document.documentElement.style.setProperty('--hover-color', '#f39c12');
-        video.style.filter = 'hue-rotate(80deg) brightness(0.5)';
+    // Function to apply dark theme
+    function applyDarkTheme() {
+        root.style.setProperty('--primary-color', '#362b46');
+        root.style.setProperty('--secondary-color', '#f1c40f');
+        root.style.setProperty('--border-color', 'silver');
+        root.style.setProperty('--text-color', 'white');
+        root.style.setProperty('--hover-color', '#f39c12');
+        root.style.setProperty('--background-color', '#242424');
+        root.style.setProperty('--navbar-bg', '#333');
+        root.style.setProperty('--footer-bg', 'rgba(0, 0, 0, 0.7)');
+        root.style.setProperty('--pillar-bg', 'rgba(119, 117, 119, 0.1)');
+        root.style.setProperty('--video-filter', 'hue-rotate(80deg) brightness(0.5)');
+        root.style.setProperty('--link-color', '#f1c40f');
     }
 
-    // Function to apply light mode
-    function applyLightMode() {
-        document.body.style.backgroundColor = 'white';
-        document.body.style.color = 'black';
-
-        document.querySelectorAll('.pillar').forEach(pillar => {
-            pillar.style.backgroundColor = 'rgba(240, 221, 240, 0.918)';
-            pillar.style.color = 'black';
-            pillar.style.borderColor = '#362b46';
-        });
-
-        document.querySelectorAll('.areas-container').forEach(container => {
-            container.style.backgroundColor = 'white';
-            container.style.color = 'black';
-        });
-
-        document.querySelectorAll('.area-cell').forEach(areaCell => {
-            areaCell.style.backgroundColor = 'rgba(240, 221, 240, 0.918)';
-            areaCell.style.color = 'black';
-            areaCell.style.borderColor = '#362b46';
-        });
-
-        document.documentElement.style.setProperty('--link-color', '#362b46');
-        document.documentElement.style.setProperty('--border-color', '#362b46');
-        document.documentElement.style.setProperty('--hover-color', '#9908a7');
-        video.style.filter = 'hue-rotate(0deg) brightness(1)';
-    }
-
-    if (themeSwitch.checked) {
-        applyDarkMode();
-    } else {
-        applyLightMode();
-    }
-
-    themeSwitch.addEventListener('change', function () {
-        if (this.checked) {
-            applyDarkMode();
+    // Check screen size and enforce dark mode on mobile and tablet
+    function enforceDarkMode() {
+        if (window.innerWidth <= 1024) {
+            applyDarkTheme();
+            themeSwitch.checked = true;
+            themeSwitch.disabled = true; // Disable the toggle
         } else {
-            applyLightMode();
+            themeSwitch.disabled = false; // Enable the toggle for larger screens
+        }
+    }
+
+    // Apply theme based on toggle (for desktop only)
+    themeSwitch.addEventListener('change', function () {
+        if (window.innerWidth > 1024) {
+            if (this.checked) {
+                applyDarkTheme();
+            } else {
+                root.style.setProperty('--primary-color', 'white');
+                root.style.setProperty('--secondary-color', '#f1c40f');
+                root.style.setProperty('--border-color', '#362b46');
+                root.style.setProperty('--text-color', 'black');
+                root.style.setProperty('--hover-color', '#9908a7');
+                root.style.setProperty('--background-color', '#f8f9fa');
+                root.style.setProperty('--navbar-bg', 'white');
+                root.style.setProperty('--footer-bg', 'rgba(255, 255, 255, 0.048)');
+                root.style.setProperty('--pillar-bg', 'rgba(240, 221, 240, 0.918)');
+                root.style.setProperty('--video-filter', 'hue-rotate(0deg) brightness(1)');
+                root.style.setProperty('--link-color', '#362b46');
+            }
         }
     });
+
+    // Check screen size on page load
+    enforceDarkMode();
+
+    // Recheck screen size on window resize
+    window.addEventListener('resize', enforceDarkMode);
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function () {
