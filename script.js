@@ -162,43 +162,61 @@ document.addEventListener('DOMContentLoaded', function () {
         root.style.setProperty('--link-color', '#f1c40f');
     }
 
+    // Function to apply light theme
+    function applyLightTheme() {
+        root.style.setProperty('--primary-color', 'white');
+        root.style.setProperty('--secondary-color', '#f1c40f');
+        root.style.setProperty('--border-color', '#362b46');
+        root.style.setProperty('--text-color', 'black');
+        root.style.setProperty('--hover-color', '#9908a7');
+        root.style.setProperty('--background-color', '#f8f9fa');
+        root.style.setProperty('--navbar-bg', 'white');
+        root.style.setProperty('--footer-bg', 'rgba(255, 255, 255, 0.048)');
+        root.style.setProperty('--pillar-bg', 'rgba(240, 221, 240, 0.918)');
+        root.style.setProperty('--video-filter', 'hue-rotate(0deg) brightness(1)');
+        root.style.setProperty('--link-color', '#362b46');
+    }
+
     // Check screen size and enforce dark mode on mobile and tablet
-    function enforceDarkMode() {
+    function enforceDarkModeOnMobile() {
         if (window.innerWidth <= 1024) {
             applyDarkTheme();
-            themeSwitch.checked = true;
-            themeSwitch.disabled = true; // Disable the toggle
+            themeSwitch.checked = true; // Ensure toggle is in sync
+            themeSwitch.disabled = true; // Disable toggle on smaller screens
         } else {
-            themeSwitch.disabled = false; // Enable the toggle for larger screens
+            themeSwitch.disabled = false; // Enable toggle on larger screens
         }
     }
 
-    // Apply theme based on toggle (for desktop only)
+    // Initialize the theme based on toggle state
+    function initializeTheme() {
+        if (window.innerWidth <= 1024) {
+            applyDarkTheme(); // Force dark mode for mobile/tablet
+        } else {
+            if (themeSwitch.checked) {
+                applyDarkTheme();
+            } else {
+                applyLightTheme();
+            }
+        }
+    }
+
+    // Initialize the theme on page load
+    initializeTheme();
+
+    // Recheck screen size and enforce dark mode on resize
+    window.addEventListener('resize', enforceDarkModeOnMobile);
+
+    // Listen to theme toggle changes (only for desktop)
     themeSwitch.addEventListener('change', function () {
         if (window.innerWidth > 1024) {
             if (this.checked) {
                 applyDarkTheme();
             } else {
-                root.style.setProperty('--primary-color', 'white');
-                root.style.setProperty('--secondary-color', '#f1c40f');
-                root.style.setProperty('--border-color', '#362b46');
-                root.style.setProperty('--text-color', 'black');
-                root.style.setProperty('--hover-color', '#9908a7');
-                root.style.setProperty('--background-color', '#f8f9fa');
-                root.style.setProperty('--navbar-bg', 'white');
-                root.style.setProperty('--footer-bg', 'rgba(255, 255, 255, 0.048)');
-                root.style.setProperty('--pillar-bg', 'rgba(240, 221, 240, 0.918)');
-                root.style.setProperty('--video-filter', 'hue-rotate(0deg) brightness(1)');
-                root.style.setProperty('--link-color', '#362b46');
+                applyLightTheme();
             }
         }
     });
-
-    // Check screen size on page load
-    enforceDarkMode();
-
-    // Recheck screen size on window resize
-    window.addEventListener('resize', enforceDarkMode);
 });
 
 
