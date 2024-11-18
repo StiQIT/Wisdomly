@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const descriptions = data.descriptions;
           const footerData = data.footer;
           areasGrid.innerHTML = '';
-          const isMobile = window.innerWidth <= 768; // Check if mobile
+          const isMobile = window.innerWidth <= 870; // Check if mobile
           // Set the logo and navbar heading
           if (document.getElementById('logo')) {
             document.getElementById('logo').src = logoUrl;
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     // Check if we are on desktop
     function isDesktop() {
-        return window.innerWidth >= 720; // Adjust the breakpoint as needed
+        return window.innerWidth >= 870; // Adjust the breakpoint as needed
     }
 
     const navbar = document.querySelector('.navbar');
