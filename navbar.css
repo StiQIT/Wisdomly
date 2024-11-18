@@ -6,7 +6,6 @@
     top: 0;
     left: 0;
     width: 100%;
-    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
@@ -25,7 +24,7 @@
     
     justify-content: flex-end; /* Align links to the right */
     
-    overflow: hidden; /* Prevent overflow when resizing */
+    overflow: visible; /* Prevent overflow when resizing */
 }
 .logo {
     display: flex;
@@ -62,8 +61,8 @@
 }
 
 .nav-links li {
-   
-    flex-shrink: 0;
+    position: relative;
+    flex-shrink: 1;
 }
 
 .nav-links li a {
@@ -87,7 +86,7 @@
     left: 0;
     background-color: transparent; /* Transparent background to let individual cells stand out */
     padding: 0;
-    z-index: 100;
+    z-index: 999;
     width: 180px;
     
     opacity: 0;
