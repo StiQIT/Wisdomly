@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+@media (max-width: 870px) {
 
     .no-scroll {
         overflow: hidden !important;
@@ -112,17 +112,13 @@
         width: 90%;
         margin-bottom: 4vh; /* Increased bottom margin for better separation */
     }
-    .theme-toggle {
-        display: none; /* Hide the toggle button */
-    }
+    
     
 }
 
 /* Mobile Styles */
 @media (max-width: 480px) {
-    .theme-toggle {
-        display: none; /* Hide the toggle button */
-    }
+
     .no-scroll {
         overflow: hidden;
     }
