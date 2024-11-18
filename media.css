@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+@media (max-width: 870px) {
 
     .no-scroll {
         overflow: hidden !important;
@@ -11,17 +11,16 @@
         position: fixed;
         top: 0;
         left: 0;
-        width: 100vw;
-        height: 100vh;
+        width: 60vw; /* Take only 60% of the screen width */
+        height: 100vh; /* Full viewport height */
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        background-color: #333;
+        background-color: #333; /* Dark background */
         transform: translateX(-100%);
         transition: transform 0.3s ease;
         z-index: 1000;
-       
-        padding: 0;
+        padding: 20px; /* Add some padding for spacing */
     }
 
     /* Show the navbar when active (toggle with JS by adding 'show' class) */
@@ -41,9 +40,9 @@
         left: 0;
         width: 100vw; /* Full viewport width */
         height: 100vh; /* Full viewport height */
-        padding-top: 5vh; /* Relative padding for spacing */
-        padding-left: 5vw; /* Relative left padding */
-        background-color: var(--primary-color);
+        padding-top: 5vh;
+        padding-left: 5vw;
+        background-color: var(--primary-color); /* Purple color */
         z-index: 1000;
     }
 
@@ -55,18 +54,16 @@
         margin: 0;
         padding: 0;
         align-items: flex-start;
+        gap: 0; /* Ensure there's no spacing between links */
     }
 
     .nav-links li {
-        margin: 1vh 5vw; /* Responsive margin for spacing */
+        margin: 0.5vh 0; /* Reduce vertical spacing between links */
     }
 
     .nav-links li a {
-        font-size: 1.2rem; /* Responsive font size */
-        color: var(--text-color);
-        text-decoration: none;
-        background-color: transparent;
-        border-radius: 0.5em;
+        padding: 0.5rem 1rem; /* Optional: Adjust padding for a compact look */
+        display: block; /* Ensure full width for clickable area */
     }
 
     /* Dropdown Menu */
@@ -120,38 +117,37 @@
 
 /* Mobile Styles */
 @media (max-width: 480px) {
-    .theme-toggle {
-        display: none; /* Hide the toggle button */
-    }
     .no-scroll {
-        overflow: hidden;
+        overflow: hidden !important;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
     }
-
-    /* Navbar */
+    /* Navbar Styling */
     .navbar {
         position: fixed;
         top: 0;
         left: 0;
-        width: 100vw;
-        height: 100vh;
+        width: 60vw; /* Take only 60% of the screen width */
+        height: 100vh; /* Full viewport height */
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        background-color: #333;
+        background-color: #333; /* Dark background */
         transform: translateX(-100%);
         transition: transform 0.3s ease;
         z-index: 1000;
-        
-        padding: 0;
+        padding: 20px; /* Add some padding for spacing */
     }
 
-    /* Toggle button shows for mobile */
-    .navbar-toggle-button {
-        display: block;
-    }
-
+    /* Show the navbar when active (toggle with JS by adding 'show' class) */
     .navbar.show {
         transform: translateX(0);
+    }
+
+    /* Hide logo on smaller screens */
+    .logo {
+        display: none;
     }
 
     /* Nav Links Wrapper */
@@ -159,52 +155,66 @@
         position: fixed;
         top: 0;
         left: 0;
-        width: 100vw;
-        height: 100vh;
+        width: 100vw; /* Full viewport width */
+        height: 100vh; /* Full viewport height */
         padding-top: 5vh;
         padding-left: 5vw;
-        background-color: var(--primary-color);
+        background-color: var(--primary-color); /* Purple color */
         z-index: 1000;
     }
 
+    /* Nav Links Layout */
     .nav-links {
         display: flex;
         flex-direction: column;
         width: 100%;
+        margin: 0;
+        padding: 0;
         align-items: flex-start;
+        gap: 0; /* Ensure there's no spacing between links */
     }
 
     .nav-links li {
-        margin: 1vh 0;
+        margin: 0.5vh 0; /* Reduce vertical spacing between links */
     }
 
     .nav-links li a {
-        font-size: 1rem;
-        padding: 1vh 0;
-        color: white;
+        padding: 0.5rem 1rem; /* Optional: Adjust padding for a compact look */
+        display: block; /* Ensure full width for clickable area */
     }
 
-    /* Content Adjustments */
+    /* Dropdown Menu */
+    .nav-links .dropdown-menu {
+        display: none;
+        position: relative;
+        top: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 1em; /* Responsive padding */
+        width: 40vw;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 0.5em;
+    }
     .content-wrapper {
         margin-top: 12vh; /* Account for fixed navbar */
         /* padding: 2vw; */
     }
 
-    /* Heading and Quote */
-    .heading-quote-container {
-        padding: 0 3vw;
-        margin-top: 10vh;
+    .dropdown:focus-within .dropdown-menu {
+        display: flex;
+        flex-direction: column;
     }
 
-    .heading-quote-container h1 {
-        font-size: 2rem;
+    .nav-links .dropdown-menu li a {
+        padding: 0.5em;
+        color: white;
+        text-align: left;
     }
 
-    .heading-quote-container blockquote {
-        font-size: 1.2rem;
+    .nav-links li a:hover, .nav-links .dropdown-menu li a:hover {
+        background-color: var(--hover-color);
+        color: var(--link-color);;
     }
-
-    /* Pillar Section */
     .container {
         flex-direction: column;
         align-items: center;
@@ -216,31 +226,7 @@
         width: 90%;
         margin-bottom: 4vh; /* Increased bottom margin for better separation */
     }
-    
-
-    /* Footer */
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        background-color: var(--footer-bg);
-        color: var(--text-color);
-    }
-
-    .footer-column {
-        width: 100%;
-        margin-bottom: 2vh;
-    }
-
-    .footer-column h3 {
-        font-size: 1.2rem;
-    }
-
-    /* Scroll To Top Button */
-    #scrollToTopBtn {
-        width: 10vw; /* Larger button for mobile */
-        height: 10vw;
-        font-size: 3vw; /* Slightly larger font size */
-        bottom: 5vh;
-        right: 5vw;
+    .theme-toggle {
+        display: none; /* Hide the toggle button */
     }
 }
