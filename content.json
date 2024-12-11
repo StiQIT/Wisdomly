@@ -48,22 +48,22 @@
         {
             "title": "Business",
             "description": "A brief overview of business topics.",
-            "image": "business.jpg"
+            "image": "https://wisdomly.ai/wp-content/uploads/2024/12/DALL·E-2024-11-14-16.35.43-A-team-of-professionals-engaged-in-technology-research-in-a-collaborative-workspace.-They-are-dressed-in-casual-comfortable-attire-gathered-around-a-1.webp"
         },
         {
             "title": "Technology",
             "description": "An overview of technology projects.",
-            "image": "technology.jpg"
+            "image": "https://wisdomly.ai/wp-content/uploads/2024/12/DALL·E-2024-11-14-16.34.40-A-group-of-financial-analysts-and-business-professionals-in-a-modern-office-setting-focused-on-financial-research.-They-are-dressed-in-professional-a-1.webp"
         },
         {
             "title": "Sports",
             "description": "Exploring sports and wellness.",
-            "image": "sports.jpg"
+            "image": "https://wisdomly.ai/wp-content/uploads/2024/12/DALL·E-2024-11-14-16.37.20-An-inspiring-scene-combining-sports-and-health-featuring-athletes-engaged-in-activities-like-running-cycling-and-yoga-in-a-green-outdoor-setting.-1.webp"
         },
         {
             "title": "Education",
             "description": "Learning resources and programs.",
-            "image": "education.jpg"
+            "image": "https://stiq.gr/wp-content/uploads/2024/12/DALL·E-2024-11-14-16.39.09-A-modern-classroom-with-students-and-a-teacher-engaged-in-learning-with-a-balanced-and-simple-color-scheme.-The-setting-includes-light-touches-of-sof-1.webp"
         }
     ],
     "service1Title": "Service 1",
