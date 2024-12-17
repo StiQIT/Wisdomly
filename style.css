@@ -24,13 +24,13 @@
     --secondary-color: #f1c40f;
     --border-color: #362b46;
     --text-color: black;
-    --hover-color: #9908a7;
+    --hover-color: #a773ac;
     --background-color: #f8f9fa;
     --navbar-bg: white;
     --footer-bg: rgba(255, 255, 255, 0.048);
     --pillar-bg: rgba(240, 221, 240, 0.918);
     --video-filter: hue-rotate(0deg) brightness(1);
-    --link-color: #362b46;
+    --link-color: #2b462d;
 
     
     --dark-primary-color: #362b46;
@@ -242,47 +242,29 @@ body {
 
 .area-cell {
     display: flex;
-    align-items: center;
+    align-items: stretch; /* Stretch all children to fill the height */
     justify-content: center;
     flex-direction: column;
-    padding: 40px;
+    padding: 0; /* Remove padding to allow full area usage */
     border-radius: 10px;
     color: var(--text-color);
     box-shadow: 0 6px 12px rgba(245, 244, 244, 0.3);
     background-color: var(--pillar-bg);
     border: 1px solid var(--border-color);
+    overflow: hidden; /* Ensure nothing exceeds the boundaries */
 }
 
 .area-content {
     text-align: center;
     font-size: 1.2em;
+    padding: 20px; /* Add padding for text content */
+    background-color: var(--pillar-bg); /* Add background for better visibility */
 }
 
 .area-image {
-    max-width: 80%;
-    max-height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-top: 20px;
+    width: 100%; /* Make the image fill the width */
+    height: 100%; /* Make the image fill the height */
+    object-fit: cover; /* Ensure the image scales and crops to fit the container */
+    border-radius: 0; /* Remove border radius on the image */
 }
-/* Specific colors for each area */
 
-/* Responsive design for mobile */
-@media (max-width: 768px) {
-    .area-image {
-        display: none; /* Hide images on mobile */
-    }
-
-    .areas-of-use {
-        grid-template-columns: 1fr; /* Single column layout on mobile */
-    }
-
-    .area-cell {
-        width: 100%; /* Full-width cells on mobile */
-    }
-
-    /* If .area-cell is wrapping only an image, hide it on mobile */
-    .area-cell:has(.area-image) {
-        display: none;
-    }
-}
